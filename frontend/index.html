@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <title>Search Results &ndash; Smashing Magazine</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./assets/css/legacy.css">
+  <script id="loadcss__smash-main">
+    ! function(e) {
+      "use strict";
+
+      function t(e, t, n) {
+        e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
+      }
+
+      function n(t, n) {
+        return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n
+      }
+
+      function a(t, a) {
+        if (e.localStorage && e.XMLHttpRequest) n(t, a) ? o(localStorage[t + "_content"]) : l(t, a);
+        else {
+          var s = r.createElement("link");
+          s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0].appendChild(s), r.cookie = t
+        }
+      }
+
+      function l(e, t) {
+        var n = new XMLHttpRequest;
+        n.open("GET", t, !0), n.onreadystatechange = function() {
+          4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n.responseText, localStorage[e + "_file"] = t)
+        }, n.send()
+      }
+
+      function o(e) {
+        var t = r.createElement("style");
+        t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t.styleSheet.cssText = e : t.innerHTML = e
+      }
+      var r = e.document;
+      e.loadCSS = function(e, t, n) {
+        var a, l = r.createElement("link");
+        if (t) a = t;
+        else {
+          var o;
+          o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r.getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1]
+        }
+        var s = r.styleSheets;
+        l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling);
+        var c = function(e) {
+          for (var t = l.href, n = s.length; n--;)
+            if (s[n].href === t) return e();
+          setTimeout(function() {
+            c(e)
+          })
+        };
+        return l.onloadcssdefined = c, c(function() {
+          l.media = n || "all"
+        }), l
+      }, e.loadLocalStorageCSS = function(l, o) {
+        n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function() {
+          a(l, o)
+        })
+      }
+    }(this);
+    loadCSS("https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/css/main.min.css?ver=3.8.1", false, "all");
+  </script>
+  <noscript>
+    <link rel='stylesheet' id='smash-main-css' href='https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/css/main.min.css?ver=3.8.1' type='text/css' media='all' />
+  </noscript>
+  <script id="loadcss__smash-print">
+    loadCSS("https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/css/print.min.css?ver=3.8.1", false, "print");
+  </script>
+  <noscript>
+    <link rel='stylesheet' id='smash-print-css' href='https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/css/print.min.css?ver=3.8.1' type='text/css' media='print' />
+  </noscript>
+  <script id="loadcss__smash-webfonts">
+    loadLocalStorageCSS("smash-webfonts", "https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/css/webfonts.min.css?ver=3.8.1");
+  </script>
+  <!--[if IE 8]>
+<link rel='stylesheet' id='smash-ie8-css'  href='https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/css/ie8-nu.min.css?ver=3.8.1' type='text/css' media='all' />
+<![endif]-->
+
+  <!-- This site is optimized with the Yoast SEO Premium plugin v3.0.6 - https://yoast.com/wordpress/plugins/seo/ -->
+  <link rel="canonical" href="https://www.smashingmagazine.com/search-results/" />
+  <link rel="publisher" href="https://plus.google.com/+SmashingMagazine‎" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Search Results &ndash; Smashing Magazine" />
+  <meta property="og:url" content="https://www.smashingmagazine.com/search-results/" />
+  <meta property="og:site_name" content="Smashing Magazine" />
+  <meta property="article:publisher" content="https://www.facebook.com/smashmag" />
+  <meta property="og:image" content="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Search Results &ndash; Smashing Magazine" />
+  <meta name="twitter:site" content="@smashingmag" />
+  <meta name="twitter:image" content="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/logo.png" />
+  <meta name="twitter:creator" content="@smashingmag" />
+  <!-- / Yoast SEO Premium plugin. -->
+
+  <link rel="alternate" type="application/rss+xml" title="Smashing Magazine &raquo; Feed" href="https://www.smashingmagazine.com/feed/" />
+  <link rel="alternate" type="application/rss+xml" title="Smashing Magazine &raquo; Comments Feed" href="https://www.smashingmagazine.com/comments/feed/" />
+  <!--[if IE 8]>
+<script type='text/javascript' src='//html5shiv.googlecode.com/svn/trunk/html5.js?ver=4.4.2'></script>
+<![endif]-->
+  <link rel='https://api.w.org/' href='https://www.smashingmagazine.com/wp-json/' />
+  <link rel='shortlink' href='https://www.smashingmagazine.com/?p=461' />
+  <link rel="alternate" type="application/json+oembed" href="https://www.smashingmagazine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.smashingmagazine.com%2Fsearch-results%2F" />
+  <link rel="alternate" type="text/xml+oembed" href="https://www.smashingmagazine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.smashingmagazine.com%2Fsearch-results%2F&#038;format=xml" />
+  <!-- Stream WordPress user activity plugin v3.0.4 -->
+  <style type="text/css">
+    .broken_link,
+    a.broken_link {
+      text-decoration: line-through;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="dns-prefetch" href="https://media-mediatemple.netdna-ssl.com/" />
+  <link rel="dns-prefetch" href="//auslieferung.commindo-media-resourcen.de/" />
+  <link rel="preconnect" href="//media-mediatemple.netdna-ssl.com" />
+  <link rel="preconnect" href="//auslieferung.commindo-media-resourcen.de/" />
+  <link rel="mask-icon" href="https://www.smashingmagazine.com/wp-content/themes/smashing-magazine/assets/images/s.svg" color="#e53b2c" sizes="any" />
+  <!--[if IE]><link href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/favicon.ico" rel="icon" /><![endif]-->
+  <link rel="icon" href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/favicon.png" />
+  <meta name="application-name" content="Smashing Magazine" />
+  <meta name="msapplication-TileColor" content="#fff" />
+  <meta name="msapplication-square70x70logo" content="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/smashing-windows-icon-70-70.png" />
+  <meta name="msapplication-square150x150logo" content="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/smashing-windows-icon-150-150.png" />
+  <meta name="msapplication-wide310x150logo" content="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/smashing-windows-icon-310-150.png" />
+  <meta name="msapplication-square310x310logo" content="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/smashing-windows-icon-310-310.png" />
+  <meta name="msapplication-notification" content="frequency=30;polling-uri1=http://notifications.buildmypinnedsite.com/?feed=https://www.smashingmagazine.com/feed/&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=https://www.smashingmagazine.com/feed/&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=https://www.smashingmagazine.com/feed/&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=https://www.smashingmagazine.com/feed/&amp;id=4;cycle=1" />
+  <link rel="apple-touch-icon-precomposed" href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/apple-touch-icon-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/apple-touch-icon-57x57-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/apple-touch-icon-72x72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/apple-touch-icon-114x114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/apple-touch-icon-144x144-precomposed.png" />
+
+</head>
+
+<body id="top" class="page page-id-461 page-template page-template-templates page-template-search page-template-templatessearch-php www-section search-results-page">
+  <div class="mnb">
+    <a href="#mn" class="ntb js-toggle-btn" title="Jump to the main navigation">
+		Menu	</a>
+    <a href="#ms" class="stb js-toggle-btn" title="Jump to the search">
+		Search    </a>
+  </div> <a class="sr" href="#content">Jump to the content</a>
+  <header class="h" role="banner">
+    <h1 class="logo">
+      <span class="sr">Smashing Magazine</span>
+	    <a href="https://www.smashingmagazine.com/"><img src="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/logo.png" alt="Smashing Magazine Logo" srcset="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/logo.svg" /></a>
+    </h1>
+  </header>
+  <nav class="mn" id="mn" role="navigation menu">
+    <h2>Smashing Pages:</h2>
+    <ul id="menu-smashing-mobile-network" class="mnu">
+      <li id="menu-item-218248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218248 menu-item-books"><a href="https://www.smashingmagazine.com/books/">Books</a></li>
+      <li id="menu-item-218247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218247 menu-item-ebooks"><a href="https://www.smashingmagazine.com/ebooks/">eBooks</a></li>
+      <li id="menu-item-218249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218249 menu-item-tickets"><a href="https://www.smashingmagazine.com/workshops/">Tickets</a></li>
+      <li id="menu-item-219109" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-219109 menu-item-shop"><a href="https://shop.smashingmagazine.com/">Shop</a></li>
+      <li id="menu-item-188959" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188959 menu-item-email-newsletter"><a href="https://www.smashingmagazine.com/the-smashing-newsletter/">Email Newsletter</a></li>
+      <li id="menu-item-188961" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188961 menu-item-jobs"><a href="http://jobs.smashingmagazine.com">Jobs</a></li>
+      <li id="menu-item-188958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188958 menu-item-about-us-impressum"><a href="https://www.smashingmagazine.com/about/">About us / Impressum</a></li>
+    </ul>
+    <h2>Categories:</h2>
+    <ul id="menu-mobile-categories" class="mnu">
+      <li id="menu-item-181575" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-181575 menu-item-coding"><a href="https://www.smashingmagazine.com/category/coding/">Coding</a></li>
+      <li id="menu-item-181576" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-181576 menu-item-design"><a href="https://www.smashingmagazine.com/category/design/">Design</a></li>
+      <li id="menu-item-181580" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-181580 menu-item-mobile"><a href="https://www.smashingmagazine.com/category/mobile/">Mobile</a></li>
+      <li id="menu-item-181579" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-181579 menu-item-graphics"><a href="https://www.smashingmagazine.com/category/graphics/">Graphics</a></li>
+      <li id="menu-item-181577" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-181577 menu-item-ux-design"><a href="https://www.smashingmagazine.com/category/uxdesign/">UX Design</a></li>
+      <li id="menu-item-181578" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-181578 menu-item-wordpress"><a href="https://www.smashingmagazine.com/category/wordpress/"><span class="long"><span>Word</span><span>Press</span></span><span class="short">WP</span></a></li>
+    </ul>
+  </nav>
+  <a class="mnc js-toggle-btn" href="#top" data-toggle-target="mn" title="Close the navigation">X</a>
+  <div class="ms" id="ms" role="search">
+    <form id="mobile-searching" class="sfm clearfix" method="get" action="https://www.smashingmagazine.com/search-results/" target="_top">
+      <label for="mobile-search-input">Search on Smashing Magazine</label>
+      <input name="q" id="mobile-search-input" type="text" placeholder="e.g. CSS" />
+      <button class="submit" type="submit">Search</button>
+      <input type="hidden" name="cx" value="partner-pub-6779860845561969:5884617103">
+      <input type="hidden" name="cof" value="FORID:10">
+      <input type="hidden" name="ie" value="UTF-8">
+    </form>
+  </div>
+  <a role="button" class="msc js-toggle-btn" href="#top" data-toggle-target="ms" title="Close the search">X</a>
+  <nav class="tn clearfix" role="navigation">
+    <ul id="menu-network-menu" class="nw clearfix">
+      <li class="current">
+        <a href="https://www.smashingmagazine.com"><img src="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/logo.png" alt="Smashing Magazine" srcset="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/logo.svg" /></a>
+      </li>
+      <li id="menu-item-218245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218245 menu-item-books"><a href="https://www.smashingmagazine.com/books/">Books</a></li>
+      <li id="menu-item-231721" class="cody menu-item menu-item-type-custom menu-item-object-custom menu-item-231721 menu-item-ebooks"><a href="https://shop.smashingmagazine.com/products/the-smashing-library">eBooks</a></li>
+      <li id="menu-item-218696" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218696 menu-item-tickets"><a href="https://www.smashingmagazine.com/smashing-workshops/">Tickets</a></li>
+      <li id="menu-item-231722" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231722 menu-item-shop"><a href="https://shop.smashingmagazine.com/">Shop</a></li>
+      <li id="menu-item-2" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2 menu-item-jobs"><a href="http://jobs.smashingmagazine.com/">Jobs</a></li>
+    </ul>
+    <nav id="social-media-nav" role="menu">
+      <ul class="ch">
+        <li class="rss">
+          <a href="https://www.smashingmagazine.com/feed/" title="Subscribe to our RSS-feed (120K)">RSS</a>
+        </li>
+        <li class="fb">
+          <a href="//www.facebook.com/smashmag" title="Join our Facebook page! (267k)">Facebook</a>
+        </li>
+        <li class="tw">
+          <a href="//twitter.com/smashingmag" title="Follow us on Twitter! (956k)">Twitter</a>
+        </li>
+        <li class="nl">
+          <a href="https://www.smashingmagazine.com/the-smashing-newsletter/" title="Subscribe to our Email Newsletter (180k)">Newsletter</a>
+        </li>
+      </ul>
+    </nav>
+  </nav>
+  <main>
+    <div class="cc">
+      <div class="fluid clearfix">
+        <div class="grid clearfix">
+          <div class="mise sf clearfix" role="search">
+            <form role="search" id="search_1" method="get" action="https://www.smashingmagazine.com/search-results/" target="_top">
+              <label class="sl" for="searching_1">Search on Smashing Magazine</label>
+              <input id="searching_1" name="q" type="text" placeholder="e.g. JavaScript" />
+              <button class="search_submit" type="submit">Search</button>
+              <input type="hidden" name="cx" value="partner-pub-6779860845561969:5884617103">
+              <input type="hidden" name="cof" value="FORID:10">
+              <input type="hidden" name="ie" value="UTF-8">
+            </form>
+          </div>
+          <div id="content" class="col main">
+
+            <article class="post-461 page type-page status-publish hentry post no-meta search-results">
+              <div class="search-header">
+                <h2 class="search-header--title">Search Results</h2>
+                <!-- <label class="search-header--sort-by">Sort by: <span id="search-sort-by"></span></label> -->
+              </div>
+              <div id="hits-container"></div>
+              <div id="pagination-container"></div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <aside id="wpsidebar" class="sb" role="complementary">
+    <div class="col side">
+      <div class="mise sf clearfix" role="search">
+        <form role="search" id="search_2" method="get" action="https://www.smashingmagazine.com/search-results/" target="_top">
+          <label class="sl" for="searching_2">Search on Smashing Magazine</label>
+          <input id="searchbar" name="q" type="text" autocomplete="off" />
+          <button class="search_submit" type="submit">Search</button>
+          <input type="hidden" name="cx" value="partner-pub-6779860845561969:5884617103">
+          <input type="hidden" name="cof" value="FORID:10">
+          <input type="hidden" name="ie" value="UTF-8">
+        </form>
+      </div>
+
+      <div class="search-sidebar">
+        <div id="stats-container"></div>
+        <div id="tags-container"></div>
+      </div>
+
+      <div class="sf wg">
+
+        <h3>
+    <a href="https://www.smashingmagazine.com/the-smashing-newsletter/">
+      <img src="https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/images/smnl.png" alt="" />
+      Smashing Newsletter
+    </a>
+  </h3>
+        <p>Subscribe to our email newsletter for useful tips and valuable resources, sent out every second Tuesday.</p>
+        <div id="mc_embed_signup" class="mcf">
+          <form action="//smashingmagazine.us1.list-manage.com/subscribe/post?u=16b832d9ad4b28edf261f34df&amp;id=a1666656e0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
+            <label for="mcer-EMAIL" class="sr">Please provide us with your email address:</label>
+            <input id="mcer-EMAIL" name="EMAIL" type="text" placeholder="email address" />
+            <button id="mc-embedded-subscribe" name="subscribe" class="submit" type="submit">Subscribe</button>
+          </form>
+          <img class="mcc" src="https://www.smashingmagazine.com/wp-content/themes/smashing-magazine/assets/images/mc-counter.svg" alt="Currently there are 181.175 subscribers." />
+        </div>
+      </div>
+
+      <div class="bw">
+        <div id="spnsrlist-b" class="oa_zone--sponsor" data-sponsor-lines="3"></div>
+      </div>
+
+      <div class="so wg">
+        <div class="fir">
+          <p>It's finally here. <a href="https://www.smashingmagazine.com/2015/03/31/real-life-responsive-web-design-smashing-book-5/">Smashing Book #5</a>, our new book on <strong>real-life responsive design</strong>. With front-end techniques and patterns from actual projects, it's a playbook to master all the tricky facets and hurdles of responsive design.
+            <a href="https://www.smashingmagazine.com/2015/03/31/real-life-responsive-web-design-smashing-book-5/">Get the book.</a> <strong>Free shipping.</strong></p>
+        </div>
+        <div class="thi">
+          <p>With responsive design, creating Photoshop mock-ups is just inefficient. In the new anniversary edition of
+            <a href="https://www.smashingmagazine.com/books/#hardboiled-webdesign">Hardboiled Web Design</a>,&nbsp;Andy Clarke shows how to improve workflow, craft better front-end, establish style guides and reduce wasted time. <a href="https://www.smashingmagazine.com/books/#hardboiled-webdesign">Get the book</a>.</p>
+        </div>
+      </div>
+
+      <div class="bw">
+        <div id="spnsrlist-c" class="oa_zone--sponsor" data-sponsor-lines="2"></div>
+      </div>
+      <div class="oa_zone--ad" id="sidebar_special-1" data-ad-name="Sidebar Special 1" data-ad-zone="72"></div>
+      <div class="oa_zone--ad" id="sidebar_special-2" data-ad-name="Sidebar Special 2" data-ad-zone="72"></div>
+      <div class="oa_zone--ad" id="sidebar_special-3" data-ad-name="Sidebar Special 3" data-ad-zone="72"></div>
+      <div class="oa_zone--ad" id="sidebar_special-4" data-ad-name="Sidebar Special 4" data-ad-zone="72"></div>
+
+      <div class="clearfix">
+        <div class="oa_zone--ad sidebar_sky" id="sidebar_sky-1" data-ad-name="Sidebar 1" data-ad-zone="40"></div>
+        <div class="oa_zone--ad sidebar_sky" id="sidebar_sky-2" data-ad-name="Sidebar 2" data-ad-zone="40"></div>
+      </div>
+
+      <div class="bw">
+        <div id="spnsrlist-d" class="oa_zone--sponsor" data-sponsor-lines="2"></div>
+      </div>
+
+      <div class="clearfix">
+        <div class="oa_zone--ad sidebar_sky" id="sidebar_sky-3" data-ad-name="Sidebar 3" data-ad-zone="40"></div>
+      </div>
+
+    </div>
+  </aside>
+  <footer class="f" id="footer" role="contentinfo">
+
+    <p class="stmt">
+      <em>With a commitment to quality content for the design community.</em>
+      <br />Founded by Vitaly Friedman and Sven Lennartz. 2006-2008.
+      <br />Made in Germany. <span class="flinks">
+			&#9998;
+			<a href="https://www.smashingmagazine.com/write-for-us/">Write for us</a> –
+			<a href="https://www.smashingmagazine.com/contact/">Contact us</a> –
+			<a href="https://www.smashingmagazine.com/privacy-policy-2/">Datenschutzerklärung</a> –
+			<a href="https://www.smashingmagazine.com/about/">Impressum</a>.
+		</span>
+    </p>
+  </footer>
+
+  <script id="loadjs__smash-onload">
+    ! function(a) {
+      "use strict";
+      a.loadOnloadJS = function(b, c) {
+        a.addEventListener("load", function() {
+          loadJS(b, c)
+        }, !1)
+      }, a.loadJS = function(b, c) {
+        var d = a.document.createElement("script");
+        d.src = b, d.async = c || !1, a.document.body.appendChild(d)
+      }
+    }(window);
+    loadOnloadJS("https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/js/onload.min.js?ver=3.8.1", 1);
+  </script>
+  <script id="loadjs__smash-prism">
+    loadOnloadJS("https://media-mediatemple.netdna-ssl.com/wp-content/themes/smashing-magazine/assets/js/prism.js?ver=3.8.1", 1);
+  </script>
+  <script id="loadjs__wp-embed">
+    loadJS("https://media-mediatemple.netdna-ssl.com/wp-includes/js/wp-embed.min.js?ver=4.4.2", 0);
+  </script>
+
+
+
+
+
+
+
+
+  <script id="templateSearch-hit" language="x-template">
+    <div class="search-hit">
+      <a href="{{url}}" class="search-hit--figure">
+        <img src="{{image}}" class="search-hit--image" />
+      </a>
+      <div class="search-hit--details">
+        <a href="{{url}}" class="search-hit--title">{{{_highlightResult.title.value}}}</a>
+        <ul class="search-hit--infos pmd">
+          <li class="search-hit--info search-hit--info__date date rd">{{date}}</li>
+          <li class="search-hit--info search-hit--info__author">By <a href="{{authorUrl}}">{{{_highlightResult.author.value}}}</a></li>
+          <li class="search-hit--info search-hit--info__tags tags">
+          {{#tags}}<a href="https://www.smashingmagazine.com/tag/{{slug}}/">{{{name}}}</a>{{/tags}}
+          </li>
+          <li class="search-hit--info search-hit--info__comments comments">{{comments}}</li>
+        </ul>
+        <p class="search-hit--excerpt">{{{_highlightResult.description.value}}}</p>
+      </div>
+    </div>
+  </script>
+
+
+  <!-- START OF INSTANTSEARCH CSS CODE -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+  <!-- END OF INSTANTSEARCH CSS CODE -->
+
+  <!-- START OF INSTANTSEARCH JS CODE -->
+  <script src="https://cdn.jsdelivr.net/g/momentjs@2.15.1"></script>
+  <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <!-- END OF INSTANTSEARCH JS CODE -->
+
+
+</body>
+</html>

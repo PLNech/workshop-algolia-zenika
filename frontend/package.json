@@ -1,0 +1,15 @@
+{
+  "name": "smashingmagazine-livecode",
+  "version": "0.0.1",
+  "description": "InstantSearch demo for SmashingMagazine",
+  "author": "Algolia",
+  "private": true,
+  "scripts": {
+    "serve": "gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}
