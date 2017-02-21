@@ -15,21 +15,20 @@
 - Take `records.json` and load it in your code
 <details>
  <summary>Documentation</summary>
-    - [Python](https://docs.python.org/3.6/library/json.html)
-    - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
-    - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
- - Python  
+ - Python   
  
-  ```python
-  with open("../data/records.json") as f:
-      records = json.load(f)
-      print(json.dumps(records, indent=4))
-  ```
+        ```python
+        with open("../data/records.json") as f:
+            records = json.load(f)
+            print(json.dumps(records, indent=4))
+        ```    
 </details>
-
 Cool, now let's push it to algolia!
 
 - Add algolia dependency
