@@ -12,6 +12,7 @@
 
 # Step 1: From JSON to Algolia index
 
+
 - Take `records.json` and load it in your code
 <details>
  <summary>Documentation</summary>
@@ -21,7 +22,7 @@
 </details>
 <details>
  <summary>Code samples</summary>
- - Python   
+    - Python   
  
         ```python
         with open("../data/records.json") as f:
@@ -29,71 +30,73 @@
             print(json.dumps(records, indent=4))
         ```    
 </details>
+
 Cool, now let's push it to algolia!
+
 
 - Add algolia dependency
 <details>
  <summary>Documentation</summary>
-    - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-    - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
-    - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
- - Python  
+    - Python   
  
-  ```python
-  # requirements.txt
-  algoliasearch
-  ```
+        ```python
+        # requirements.txt
+        algoliasearch
+        ```
 </details>
 
 - With your credentials, init client
 <details>
  <summary>Documentation</summary>
-    - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-    - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
-    - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
- - Python  
+    - Python   
  
-  ```python
-  client = algoliasearch.Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY")
-  ```
+        ```python
+        client = algoliasearch.Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY")
+        ```
 </details>
 
 - Create index
 <details>
  <summary>Documentation</summary>
-    - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-    - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
-    - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
- - Python  
+    - Python   
 
-  ```python
-  index = client.init_index("smashing")
-  ```
+        ```python
+        index = client.init_index("smashing")
+        ```
 </details>
 
 - Push data
 <details>
  <summary>Documentation</summary>
-    - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-    - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
-    - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
- - Python  
- 
-  ```python
-  index.add_objects(records)
-  ```
+    - Python   
+
+        ```python
+        index.add_objects(records)
+        ```
 </details>
 
 # Step 2
@@ -103,36 +106,40 @@ Cool, now let's push it to algolia!
 -> priority for tie-breaking!
 <details>
  <summary>Documentation</summary>
-    - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-    - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
-    - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
-  ```python
-  index.set_settings({
-      "searchableAttributes": ["title", "description", "tags", "author"],
-      "customRanking": ["desc(commentCount)"]
-  })
-  ```
+    - Python  
+
+        ```python
+        index.set_settings({
+            "searchableAttributes": ["title", "description", "tags", "author"],
+            "customRanking": ["desc(commentCount)"]
+        })
+        ```
 </details>
 
 - Set faceting on tags
 <details>
  <summary>Documentation</summary>
-    - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-    - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
-    - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
  <summary>Code samples</summary>
-  ```python
-  res = index.set_settings({
-          "attributesForFaceting": ["tags.name"]
-  })
-  index.wait_task(res['taskID'])
-  print("Attributes for faceting: %s." % index.get_settings()['attributesForFaceting'])
-  ```
+    - Python   
+
+        ```python
+        res = index.set_settings({
+                "attributesForFaceting": ["tags.name"]
+        })
+        index.wait_task(res['taskID'])
+        print("Attributes for faceting: %s." % index.get_settings()['attributesForFaceting'])
+        ```
 </details>
 
 # Step 3: Front-end
