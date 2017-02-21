@@ -16,7 +16,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://docs.python.org/3.6/library/json.html)
+  
   - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  
   - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
@@ -34,7 +36,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
+  
   - [Java](https://www.algolia.com/doc/api-client/python/getting-started/#install)
+  
   - [PHP](https://www.algolia.com/doc/api-client/python/getting-started/#install)
 </details>
 <details>
@@ -51,7 +55,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
+  
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#initialize-the-client)
+  
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#initialize-the-client)
 </details>
 <details>
@@ -67,7 +73,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
+  
   - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  
   - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
@@ -83,7 +91,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
+  
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
+  
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
 </details>
 <details>
@@ -103,7 +113,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
+  
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
+  
   - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
 </details>
 <details>
@@ -122,7 +134,9 @@
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
+  
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
+  
   - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
 </details>
 <details>
