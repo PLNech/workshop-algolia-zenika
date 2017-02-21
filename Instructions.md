@@ -27,10 +27,10 @@
  
         ```python
         with open("../data/records.json") as f:
-            records = json.load(f)
-            print(json.dumps(records, indent=4))
+            articles = json.load(f)
+            print(json.dumps(articles, indent=4))
         ```    
-</details>
+ </details>
 
 - Add algolia dependency
 <details>
@@ -48,6 +48,21 @@
         ```python
         # requirements.txt
         algoliasearch
+        ```
+    - Java   
+ 
+        ```xml
+        <!-- pom.xml -->
+        <dependency>
+          <groupId>com.algolia</groupId>
+          <artifactId>algoliasearch</artifactId>
+          <version>[2,]</version>
+        </dependency>
+        ```
+    - PHP   
+ 
+        ```php
+        composer require algolia/algoliasearch-client-php
         ```
 </details>
 
@@ -67,6 +82,16 @@
         ```python
         client = algoliasearch.Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY")
         ```
+    - Java   
+ 
+        ```java
+        APIClient client = new ApacheAPIClientBuilder("YOUR_APP_ID", "YOUR_ADMIN_API_KEY").build();
+        ```
+    - PHP   
+ 
+        ```php
+        $client = new \AlgoliaSearch\Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY");
+        ```
 </details>
 
 - Create index
@@ -85,6 +110,16 @@
         ```python
         index = client.init_index("smashing")
         ```
+    - Java   
+ 
+        ```java
+        Index<Article> index = client.initIndex("smashing", Article.class);
+        ```
+    - PHP   
+ 
+        ```php
+        $index = $client->initIndex('smashing');
+        ```
 </details>
 
 - Push data
@@ -101,7 +136,17 @@
     - Python   
 
         ```python
-        index.add_objects(records)
+        index.add_objects(articles)
+        ```
+    - Java   
+ 
+        ```java
+        index.addObjects(articles);
+        ```
+    - PHP   
+ 
+        ```php
+        $index->addObjects($batch);
         ```
 </details>
 
@@ -128,6 +173,20 @@
             "customRanking": ["desc(commentCount)"]
         })
         ```
+    - Java   
+ 
+        ```java
+        index.setSettings(new IndexSettings()
+                              .setSearchableAttributes(Arrays.asList("title", "description", "tags", "author"))
+                              .setCustomRanking(Arrays.asList("desc(commentCount)")));
+        ```
+    - PHP   
+ 
+        ```php
+        $index->setSettings(array(
+            "searchableAttributes" => array("title", "description", "tags", "author"),
+            "customRanking" => array("desc(commentCount)")));
+        ```
 </details>
 
 - Set faceting on tags
@@ -149,6 +208,17 @@
         })
         index.wait_task(res['taskID'])
         print("Attributes for faceting: %s." % index.get_settings()['attributesForFaceting'])
+        ```
+    - Java   
+ 
+        ```java
+        // The java client is either sync or async: you would use `algoliasearch-async` in your pom.xml instead
+        index.setSettings(new IndexSettings().setAttributesForFaceting(Arrays.asList("tags.name")));
+        ```
+    - PHP   
+ 
+        ```php
+        $index->setSettings(array("attributesForFaceting" => array("tags.name")));
         ```
 </details>
 
