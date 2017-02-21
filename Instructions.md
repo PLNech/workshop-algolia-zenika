@@ -31,9 +31,6 @@
         ```    
 </details>
 
-Cool, now let's push it to algolia!
-
-
 - Add algolia dependency
 <details>
  <summary>Documentation</summary>
