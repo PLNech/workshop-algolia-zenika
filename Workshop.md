@@ -12,11 +12,10 @@ Ensure:
   - has Algolia account
   - clone repo or get archive
 
-## Step 1: Parsed JSON in your language
+## Step 1: Parse data and upload to Algolia
 - New project
 - get JSONObject
 
-## Step 2: Push data to Algolia
 - Algolia dependency
 - Algolia credentials
 > Secured API Key feature, users, A#CL
@@ -24,14 +23,16 @@ Ensure:
 - New Index
 - Push data
 
-## Step 3: Set settings
+## Step 2: Set settings
 - Searchable attributes
 > Tie breaking algorithm
+
+- Faceting on tags.name
 
 - Unretrievable attributes
 > SetSettings triggers reindex, nothing else to do (no repush data, no reindex)
 
-## Step 4: Front-end
+## Step 3: Front-end
 - Activate IS.js
 - Add Search Bar & Hits
 - Use template
@@ -39,6 +40,6 @@ Ensure:
 - Stats / Pagination / Tag cloud
 - URLSync
 
-## Step 5: Go further
+## Step 4: Go further
 - Bonus ideas?
 - Projects/demos to explore?

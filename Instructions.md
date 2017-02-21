@@ -40,7 +40,6 @@ index = client.init_index("smashing")
 - Push data
 ```python
 index.add_objects(records)
-
 ```
 
 # Step 2
@@ -64,7 +63,6 @@ index.wait_task(res['taskID'])
 print("Attributes for faceting: %s." % index.get_settings()['attributesForFaceting'])
 ```
 
-> UnretrievableAttributes: Some attrs can be used for searching/ranking, but not displayed
 
 # Step 3: Front-end
 
