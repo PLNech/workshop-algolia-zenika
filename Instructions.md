@@ -12,7 +12,6 @@
 
 # Step 1: From JSON to Algolia index
 
-
 - Take `records.json` and load it in your code
 <details>
  <summary>Documentation</summary>
