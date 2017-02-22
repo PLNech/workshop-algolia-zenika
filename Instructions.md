@@ -455,6 +455,7 @@ search.addWidget(
 
 ## Reflect the state of the interface in the url
 > *Make it possible to share a link to search results with `urlSync`*
+
 - In the instanciation of instantsearch.js, add the `urlSync` attribute:
 
 ```js
