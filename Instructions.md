@@ -249,16 +249,219 @@ You will learn how to:
 # Step 3: Integrate your search engine in a front-end 
 > *Build a search interface quickly with instantsearch.js*
 
-- Activate IS.js: replace with your credentials
+## Load instantsearch.js with your Algolia credentials
 
-- Add Search Bar & Hits (customize or check doc)
+- In `assets/index.js`, uncomment the first code block and replace the placeholders with your credentials
 
-- Use template (existent but free to customize)
+```js
+var search = instantsearch({
+  appId: 'YOUR_APP_ID',
+  apiKey: 'YOUR_SEARCH_API_KEY',
+  indexName: 'smashing',
+});
+```
 
-- Transform data/Highlighting (see function, fiddle if you want)
+## Add your first widget: a `searchBox` for user input
 
-- Stats / Pagination / Tag cloud (same)
+- In `index.html`, notice the `<input id="searchbar" />`: we'll use this input for our search
+- In `assets/index.js`, uncomment the code that creates the `searchBox` widget:
 
-- URLSync (what if reload?)
+```js
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#searchbar',
+    placeholder: 'Search for articles',
+    autofocus: true,
+    poweredBy: true
+  })
+);
+```
+
+## Add a second widget to display search `hits`
+
+- In `assets/index.js`, uncomment the next code block to add a `hits` widget and start the search:
+
+```js
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits-container',
+    hitsPerPage: 20,
+    templates: {
+      item: `{{title}}`,
+      empty: `No results`
+    }
+  })
+);
+
+search.start();
+```
 
 
+## Improve the search result display
+> *Use a HTML template for displaying the hits and some css to make it pretty*
+
+- In `index.html`, notice the `<script id="templateSearch-hit" language="x-template">` node: we will use this template to enrich the display of our search results
+- In `assets/index.js`, replace the item's template by this one:
+
+```js
+templates: {
+  item: document.getElementById("templateSearch-hit").innerHTML,
+  empty: `No results`
+}
+```
+
+- In `assets/css/index.css`, notice the `.search-hits` class: we'll use it for styling our search results
+- In `assets/index.js`, add to the hits widget a `cssClasses` property to the hits widget:
+
+```js
+//templates: {...},
+cssClasses: {
+  root: 'search-hits'
+}
+```
+
+## Enrich the data before displaying it
+> *Transform your data to make it more useful for your users*
+
+- In `assets/index.js`, add to the hits widget a `transformData` function to enrich your search results:
+
+```js
+//cssClasses: {...},
+transformData: {
+  item: (hit) => {
+    // Date in human-readable format
+    hit.date = moment.unix(hit.publishedDate).format('MMMM Do, YYYY');
+
+    // Number of comments
+    if (hit.commentCount > 1) {
+      hit.comments = `${hit.commentCount} Comments`;
+    } else {
+      hit.comments = hit.commentCout === 0 ? null : '1 Comment';
+    }
+    
+    return hit;
+  }
+}
+```
+
+- In `index.html`, edit the template to use your new attributes (`comments` instead of `commentCount` and `date` instead of `publishedDate`):
+
+```html
+<script id="templateSearch-hit" language="x-template">
+    <div class="search-hit">
+      <a href="{{url}}" class="search-hit--figure">
+        <img src="{{image}}" class="search-hit--image" />
+      </a>
+      <div class="search-hit--details">
+        <a href="{{url}}" class="search-hit--title">{{title}}</a>
+        <ul class="search-hit--infos pmd">
+          <li class="search-hit--info search-hit--info__date date rd">{{date}}</li>
+          <li class="search-hit--info search-hit--info__author">By <a href="{{authorUrl}}">{{author}}</a></li>
+          <li class="search-hit--info search-hit--info__tags tags">
+          {{#tags}}<a href="https://www.smashingmagazine.com/tag/{{slug}}/">{{{name}}}</a>{{/tags}}
+          </li>
+          <li class="search-hit--info search-hit--info__comments comments">{{comments}}</li>
+        </ul>
+        <p class="search-hit--excerpt">{{description}}</p>
+      </div>
+    </div>
+</script>
+```
+
+## Help your users understand the search results with highlighting
+> *Highlight the query terms in your search results to explain them to the user*
+
+- In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}`:
+
+```html
+<script id="templateSearch-hit" language="x-template">
+    <div class="search-hit">
+      <a href="{{url}}" class="search-hit--figure">
+        <img src="{{image}}" class="search-hit--image" />
+      </a>
+      <div class="search-hit--details">
+        <a href="{{url}}" class="search-hit--title">{{{_highlightResult.title.value}}}</a>
+        <ul class="search-hit--infos pmd">
+          <li class="search-hit--info search-hit--info__date date rd">{{date}}</li>
+          <li class="search-hit--info search-hit--info__author">By <a href="{{authorUrl}}">{{{_highlightResult.author.value}}}</a></li>
+          <li class="search-hit--info search-hit--info__tags tags">
+          {{#tags}}<a href="https://www.smashingmagazine.com/tag/{{slug}}/">{{{name}}}</a>{{/tags}}
+          </li>
+          <li class="search-hit--info search-hit--info__comments comments">{{comments}}</li>
+        </ul>
+        <p class="search-hit--excerpt">{{{_highlightResult.description.value}}}</p>
+      </div>
+    </div>
+</script>
+```
+
+## Display statistics/metadata about your search
+> Use the stats widget to display contextual information
+
+- In `index.html`, notice the `<div id="stats-container">"` which will host your stats
+- In `assets/index.js`, uncomment the next code block to add a `stats` widget:
+
+```js
+search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#stats-container',
+    cssClasses: {
+      root: 'search-stats'
+    }
+  })
+);
+```
+
+## Add pagination to your interface
+> *Use the pagination widget to let your user navigate through pages of results*
+
+- In `index.html`, notice the `<div id="pagination-container">"` which will host the pagination
+- In `assets/index.js`, uncomment the next code block to add a `pagination` widget:
+
+```js
+search.addWidget(
+  instantsearch.widgets.pagination({
+    container: '#pagination-container',
+    maxPages: 20,
+    // default is to scroll to 'body', here we disable this behavior
+    scrollTo: false
+  })
+);
+```
+
+## Let your users filter by tag
+> *Use the refinementList widget to display an interactive tag cloud*
+
+- In `index.html`, notice the `<div id="tags-container">"` which will host your tags
+- In `assets/index.js`, uncomment the next code block to add a `refinementList` widget:
+
+```js
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#tags-container',
+    attributeName: 'tags.name',
+    operator: 'and',
+    limit: 10,
+    cssClasses: {
+      root: 'search-tags',
+      header: 'search-tags-header'
+    },
+    templates: {
+      header: 'Tags'
+    }
+  })
+);
+```
+
+## Reflect the state of the interface in the url
+> *Make it possible to share a link to search results with `urlSync`*
+- In the instanciation of instantsearch.js, add the `urlSync` attribute:
+
+```js
+var search = instantsearch({
+  appId: 'YOUR_APP_ID',
+  apiKey: 'YOUR_SEARCH_API_KEY',
+  indexName: 'smashing',
+  urlSync: true
+});
+```
