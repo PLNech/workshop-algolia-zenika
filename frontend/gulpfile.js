@@ -12,8 +12,8 @@ gulp.task('connect', function () {
 });
 
 gulp.task('watch', ['connect'], function () {
-  gulp.watch(['index.html', 'assets/**'], function () {
-    gulp.src(['index.html', 'assets/**'])
+  gulp.watch(['index.*'], function () {
+    gulp.src(['index.*'])
       .pipe(connect.reload());
   })
 });

@@ -1,15 +1,18 @@
 (function() {
-  console.log('Search built with InstantSearch.js')
+  console.log('Search built with InstantSearch.js');
 
-
+// 3.1: Load Algolia with your credentials
+/*
 var search = instantsearch({
-  appId: '***REMOVED***',
-  apiKey: '26b270849a0b8189838581c341ff3b06',
+  appId: 'YOUR_APP_ID',
+  apiKey: 'YOUR_SEARCH_API_KEY',
   indexName: 'smashing',
   urlSync: true
 });
+*/
 
-
+// 3.2: Add a SearchBox for user input
+/*
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '#searchbar',
@@ -18,13 +21,47 @@ search.addWidget(
     poweredBy: true
   })
 );
+*/
 
-
-// Search results
+// 3.3: Display search results and start search
+// /!\ COMMENT AGAIN THIS CODE BLOCK BEFORE UNCOMMENTING THE NEXT ONE /!\
+/*
 search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits-container',
-    hitsPerPage: 20,
+    hitsPerPage: 10,
+    templates: {
+      item: `{{title}}`,
+      empty: `No results`
+    }
+  })
+);
+*/
+
+// 3.4: Improved display of search results
+// /!\ COMMENT AGAIN THIS CODE BLOCK BEFORE UNCOMMENTING THE NEXT ONE /!\
+/*
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits-container',
+    hitsPerPage: 10,
+    templates: {
+      item: document.getElementById("templateSearch-hit").innerHTML,
+      empty: `No results`
+    },
+    cssClasses: {
+      root: 'search-hits'
+    }
+  })
+);
+*/
+
+// 3.5: Transform data in search results
+/*
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits-container',
+    hitsPerPage: 10,
     templates: {
       item: document.getElementById("templateSearch-hit").innerHTML,
       empty: `No results`
@@ -46,9 +83,23 @@ search.addWidget(
     }
   })
 );
+*/
 
 
+//3.6: Add statistics
+/*
+search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#stats-container',
+    cssClasses: {
+      root: 'search-stats'
+    }
+  })
+);
+*/
 
+//3.7: Add pagination
+/*
 search.addWidget(
   instantsearch.widgets.pagination({
     container: '#pagination-container',
@@ -57,10 +108,10 @@ search.addWidget(
     scrollTo: false
   })
 );
+*/
 
-
-
-// Tag cloud
+// 3.8: Tag cloud
+/*
 search.addWidget(
   instantsearch.widgets.refinementList({
     container: '#tags-container',
@@ -76,7 +127,8 @@ search.addWidget(
     }
   })
 );
+*/
 
-
+// Start the user interaction
 search.start();
 })();
