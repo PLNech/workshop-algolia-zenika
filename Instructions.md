@@ -20,26 +20,6 @@ You will learn how to:
 # Step 1: From JSON to Algolia
 > *Load the data and push it in an Algolia index*
 
-- Take `articles.json` and load it in your code
-<details>
- <summary>Documentation</summary>
-  - [Python](https://docs.python.org/3.6/library/json.html)
-  
-  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
-  
-  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
-</details>
-<details>
- <summary>Code samples</summary>
-    - Python   
- 
-        ```python
-        with open("../data/articles.json") as f:
-            articles = json.load(f)
-            print(json.dumps(articles, indent=4))
-        ```    
- </details>
-
 - Add algolia as a dependency
 <details>
  <summary>Documentation</summary>
@@ -73,6 +53,36 @@ You will learn how to:
         composer require algolia/algoliasearch-client-php
         ```
 </details>
+
+- Take `articles.json` and load it in your code
+<details>
+ <summary>Documentation</summary>
+  - [Python](https://docs.python.org/3.6/library/json.html)
+  
+  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  
+  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
+</details>
+<details>
+ <summary>Code samples</summary>
+    - Python   
+ 
+        ```python
+        with open("../data/articles.json") as f:
+            articles = json.load(f)
+            print(json.dumps(articles, indent=4))
+        ``` 
+    - Java
+    
+        ```java
+        ```
+    - PHP
+    
+        ```php
+        $batch = json_decode(file_get_contents('../data/articles.json'), true);
+        ```
+ </details>
+
 
 - With your credentials, initialize an API client
 <details>
