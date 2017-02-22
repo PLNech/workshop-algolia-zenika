@@ -12,7 +12,7 @@
 
 # Step 1: From JSON to Algolia index
 
-- Take `records.json` and load it in your code
+- Take `articles.json` and load it in your code
 <details>
  <summary>Documentation</summary>
   - [Python](https://docs.python.org/3.6/library/json.html)
@@ -26,7 +26,7 @@
     - Python   
  
         ```python
-        with open("../data/records.json") as f:
+        with open("../data/articles.json") as f:
             articles = json.load(f)
             print(json.dumps(articles, indent=4))
         ```    
