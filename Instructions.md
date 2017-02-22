@@ -249,6 +249,10 @@ You will learn how to:
 # Step 3: Integrate your search engine in a front-end 
 > *Build a search interface quickly with instantsearch.js*
 
+For this step, you will need:
+- an editor for modifying HTML/JS files (any editor is fine).
+- a browser to display the page (either by manually opening the html or using `cd frontend; npm install && npm run serve`
+
 ## Load instantsearch.js with your Algolia credentials
 
 - In `assets/index.js`, uncomment the first code block and replace the placeholders with your credentials
