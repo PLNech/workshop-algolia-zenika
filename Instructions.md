@@ -1,6 +1,7 @@
 # Intro
 
 # Step 0: Get started
+> Get the initial data and your API Credentials
 
 - Clone the repository or download [its archive](https://github.com/PLNech/workshop-algolia-zenika/archive/master.zip)
 > `git clone git@github.com:PLNech/workshop-algolia-zenika.git`
@@ -10,7 +11,8 @@
   - Your Admin API Key (for creating/modifying/deleting data)
   - Your Search-only API Key (for searching in your front-end)
 
-# Step 1: From JSON to Algolia index
+# Step 1: From JSON to Algolia
+> Load the data and push it in an Algolia index
 
 - Take `articles.json` and load it in your code
 <details>
@@ -32,7 +34,7 @@
         ```    
  </details>
 
-- Add algolia dependency
+- Add algolia as a dependency
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
@@ -66,7 +68,7 @@
         ```
 </details>
 
-- With your credentials, init client
+- With your credentials, initialize an API client
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
@@ -94,7 +96,7 @@
         ```
 </details>
 
-- Create index
+- Create your algolia index: `smashing`
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
@@ -122,7 +124,7 @@
         ```
 </details>
 
-- Push data
+- Add your objects to the index
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
@@ -150,11 +152,10 @@
         ```
 </details>
 
-# Step 2
-> These can be done in dashboard too
+# Step 2: Customizing the index
+> Set the appropriate settings for your data: where to search, how to sort, how to filter
 
-- Set Searchable attributes and customRanking
--> priority for tie-breaking!
+- Set searchableAttributes (what can be searched) and customRanking (how results should be sorted)
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
@@ -189,7 +190,7 @@
         ```
 </details>
 
-- Set faceting on tags
+- Set attributesForFaceting (which attributes can be filtered on)
 <details>
  <summary>Documentation</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
