@@ -218,7 +218,11 @@
     - PHP   
  
         ```php
-        $index->setSettings(array("attributesForFaceting" => array("tags.name")));
+        $res = $index->setSettings(array("attributesForFaceting" => array("tags.name")));
+        $index->waitTask($res['taskID']);
+        $settings = $index->getSettings();
+        var_dump($settings);
+
         ```
 </details>
 
