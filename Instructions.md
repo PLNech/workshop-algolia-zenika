@@ -1,7 +1,13 @@
-# Intro
+**Welcome to the Algolia Zenika Workshop! This readme will guide you through using Algolia in a few steps.**  
+You will learn how to:
+
+- Push your data in Algolia 🚀
+- Configure the engine to search the way you like 🔎
+- Build a front-end in a few minutes with instantsearch.js ⚡
+
 
 # Step 0: Get started
-> Get the initial data and your API Credentials
+> *Get the initial data and your API Credentials*
 
 - Clone the repository or download [its archive](https://github.com/PLNech/workshop-algolia-zenika/archive/master.zip)
 > `git clone git@github.com:PLNech/workshop-algolia-zenika.git`
@@ -12,7 +18,7 @@
   - Your Search-only API Key (for searching in your front-end)
 
 # Step 1: From JSON to Algolia
-> Load the data and push it in an Algolia index
+> *Load the data and push it in an Algolia index*
 
 - Take `articles.json` and load it in your code
 <details>
@@ -153,7 +159,7 @@
 </details>
 
 # Step 2: Customizing the index
-> Set the appropriate settings for your data: where to search, how to sort, how to filter
+> *Set the appropriate settings for your data: where to search, how to sort, how to filter*
 
 - Set searchableAttributes (what can be searched) and customRanking (how results should be sorted)
 <details>
@@ -227,7 +233,8 @@
         ```
 </details>
 
-# Step 3: Front-end
+# Step 3: Integrate your search engine in a front-end 
+> *Build a search interface quickly with instantsearch.js*
 
 - Activate IS.js: replace with your credentials
 
