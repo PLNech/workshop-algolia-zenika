@@ -4,7 +4,7 @@
 <head>
   <title>Search Results &ndash; Smashing Magazine</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="./assets/css/legacy.css">
+  <link rel="stylesheet" type="text/css" href="./legacy.css">
   <script id="loadcss__smash-main">
     ! function(e) {
       "use strict";
@@ -364,16 +364,16 @@
         <img src="{{image}}" class="search-hit--image" />
       </a>
       <div class="search-hit--details">
-        <a href="{{url}}" class="search-hit--title">{{{_highlightResult.title.value}}}</a>
+        <a href="{{url}}" class="search-hit--title">{{title}}</a>
         <ul class="search-hit--infos pmd">
-          <li class="search-hit--info search-hit--info__date date rd">{{date}}</li>
-          <li class="search-hit--info search-hit--info__author">By <a href="{{authorUrl}}">{{{_highlightResult.author.value}}}</a></li>
+          <li class="search-hit--info search-hit--info__date date rd">{{publishedDate}}</li>
+          <li class="search-hit--info search-hit--info__author">By <a href="{{authorUrl}}">{{author}}</a></li>
           <li class="search-hit--info search-hit--info__tags tags">
           {{#tags}}<a href="https://www.smashingmagazine.com/tag/{{slug}}/">{{{name}}}</a>{{/tags}}
           </li>
-          <li class="search-hit--info search-hit--info__comments comments">{{comments}}</li>
+          <li class="search-hit--info search-hit--info__comments comments">{{commentCount}}</li>
         </ul>
-        <p class="search-hit--excerpt">{{{_highlightResult.description.value}}}</p>
+        <p class="search-hit--excerpt">{{description}}</p>
       </div>
     </div>
   </script>
@@ -381,13 +381,13 @@
 
   <!-- START OF INSTANTSEARCH CSS CODE -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="./index.css">
   <!-- END OF INSTANTSEARCH CSS CODE -->
 
   <!-- START OF INSTANTSEARCH JS CODE -->
   <script src="https://cdn.jsdelivr.net/g/momentjs@2.15.1"></script>
   <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
-  <script src="./assets/js/index.js"></script>
+  <script src="./index.js"></script>
   <!-- END OF INSTANTSEARCH JS CODE -->
 
 

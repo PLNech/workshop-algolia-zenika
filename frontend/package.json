@@ -1,7 +1,7 @@
 {
-  "name": "smashingmagazine-livecode",
+  "name": "smashingmagazine-workshop",
   "version": "0.0.1",
-  "description": "InstantSearch demo for SmashingMagazine",
+  "description": "InstantSearch demo with SmashingMagazine",
   "author": "Algolia",
   "private": true,
   "scripts": {
