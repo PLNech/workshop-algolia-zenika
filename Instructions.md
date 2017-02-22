@@ -75,6 +75,9 @@ You will learn how to:
     - Java
     
         ```java
+        // Using GSON
+        BufferedReader br = new BufferedReader(new FileReader("../data/articles.json"));
+        List<Article> articles = new Gson().fromJson(br, Article.class);
         ```
     - PHP
     
