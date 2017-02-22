@@ -296,8 +296,6 @@ search.addWidget(
     }
   })
 );
-
-search.start();
 ```
 
 
