@@ -77,9 +77,8 @@ You will learn how to:
     - Java
     
         ```java
-        // Using GSON
         BufferedReader br = new BufferedReader(new FileReader("../data/articles.json"));
-        List<Article> articles = new Gson().fromJson(br, Article.class);
+        List<Articles> articles = com.algolia.search.Defaults.DEFAULT_OBJECT_MAPPER.readValue(br, Articles.class);
         ```
     - PHP
     
