@@ -210,14 +210,14 @@ You will learn how to:
         ```
 </details>
 
-- Set attributesForFaceting (which attributes can be filtered on)
+- Set attributesForFaceting (which attributes can be filtered on) and confirm the new value
 <details>
  <summary>Documentation</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
+  - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
   
-  - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
+  - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
   
-  - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
+  - [PHP](https://www.algolia.com/doc/api-client/php/settings/#get-settings)
 </details>
 <details>
  <summary>Code samples</summary>
@@ -233,8 +233,9 @@ You will learn how to:
     - Java   
  
         ```java
-        // The java client is either sync or async: you would use `algoliasearch-async` in your pom.xml instead
-        index.setSettings(new IndexSettings().setAttributesForFaceting(Arrays.asList("tags.name")));
+        index.setSettings(new IndexSettings().setAttributesForFaceting(Arrays.asList("tags.name")))
+             .waitForCompletion();
+        System.out.println(index.getSettings().getAttributesForFaceting());
         ```
     - PHP   
  
@@ -242,7 +243,7 @@ You will learn how to:
         $res = $index->setSettings(array("attributesForFaceting" => array("tags.name")));
         $index->waitTask($res['taskID']);
         $settings = $index->getSettings();
-        var_dump($settings);
+        var_dump($settings['attributesForFaceting']);
 
         ```
 </details>
