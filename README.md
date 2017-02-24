@@ -350,7 +350,7 @@ templates: {
 </details>
 
 - In `index.css`, notice the `.search-hits` class: we'll use it for styling our search results
-- In `index.js`, add to the hits widget a `cssClasses` property to the hits widget:
+- In `index.js`, add to the hits widget a cssClasses property : `cssClasses: {root: 'search-hits'}`
 
 <details>
  <summary>Code</summary>
@@ -365,7 +365,7 @@ cssClasses: {
 ## Enrich the data before displaying it
 > *Transform your data to make it more useful for your users*
 
-- In `index.js`, add to the hits widget a `transformData` function to enrich your search results:
+- In `index.js`, add to the hits widget a `transformData` function to enrich your search results: use the `publishedDate` timestamp to create a human-readable `date`, and create a new `comments` attribute to pretty print the number of comments.
 
 <details>
  <summary>Code</summary>
@@ -389,7 +389,7 @@ transformData: {
 ```
 </details>
 
-- In `index.html`, edit the template to use your new attributes (`comments` instead of `commentCount` and `date` instead of `publishedDate`):
+- In `index.html`, edit the template to use your new attributes (replace `commentCount` by `comments` and `publishedDate` by `date`):
 
 <details>
  <summary>Code</summary>
@@ -419,7 +419,8 @@ transformData: {
 ## Help your users understand the search results with highlighting
 > *Highlight the query terms in your search results to explain them to the user*
 
-- In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}`:
+[Search result highlighting](https://blog.algolia.com/inside-the-algolia-engine-part-5-highlighting-a-cornerstone-to-search-ux/) is one of the key components of a great search experience. Your search results already include highlighted attributes, you just need to use them in your results template!  
+- In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}` for each searchable attribute.
 
 <details>
  <summary>Code</summary>
