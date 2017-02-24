@@ -275,7 +275,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
 > *Build a search interface quickly with instantsearch.js*
 
 For this step, you will need:
-- an editor for modifying HTML/JS files (any editor is fine).
+- an editor for modifying HTML/JS files (any editor is fine)
 - a browser to display the page (either by manually opening the html or using `cd frontend; npm install && npm run serve`)
 
 **Don't hesitate to open the [instantsearch.js documentation][is-doc] : you can do a lot more with each widget than what is shown here!**
@@ -365,7 +365,7 @@ cssClasses: {
 ## Enrich the data before displaying it
 > *Transform your data to make it more useful for your users*
 
-- In `index.js`, add to the hits widget a `transformData` function to enrich your search results: use the `publishedDate` timestamp to create a human-readable `date`, and create a new `comments` attribute to pretty print the number of comments.
+- In `index.js`, add to the hits widget a `transformData` function to enrich your search results: use the `publishedDate` timestamp to create a human-readable `date`, and create a new `comments` attribute to pretty print the number of comments
 
 <details>
  <summary>Code</summary>
@@ -389,7 +389,7 @@ transformData: {
 ```
 </details>
 
-- In `index.html`, edit the template to use your new attributes (replace `commentCount` by `comments` and `publishedDate` by `date`):
+- In `index.html`, edit the template to use your new attributes (replace `commentCount` by `comments` and `publishedDate` by `date`)
 
 <details>
  <summary>Code</summary>
@@ -420,7 +420,7 @@ transformData: {
 > *Highlight the query terms in your search results to explain them to the user*
 
 [Search result highlighting](https://blog.algolia.com/inside-the-algolia-engine-part-5-highlighting-a-cornerstone-to-search-ux/) is one of the key components of a great search experience. Your search results already include highlighted attributes, you just need to use them in your results template!  
-- In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}` for each searchable attribute.
+- In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}` for each searchable attribute
 
 <details>
  <summary>Code</summary>
