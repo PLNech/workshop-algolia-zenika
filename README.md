@@ -1,15 +1,18 @@
 # Workshop Algolia @Zenika
 
-**Welcome to the Algolia Zenika Workshop! This readme will guide you through using Algolia in a few steps.**  
+**Welcome to the Algolia Zenika Workshop! In a few steps, you'll see how to build your search applications with Algolia. **
 You will learn how to:
 
-- Push your data in Algolia 🚀
+- Use Algolia in your back-end to index your data 🚀
 - Configure the engine to search the way you like 🔎
 - Build a front-end in a few minutes with instantsearch.js ⚡
 
+We will use [**Smashing Magazine's website**](https://www.smashingmagazine.com/) as an example project, and will go from raw JSON data to a fully functional search interface.
 
 # Step 0: Get started
 > *Get the initial data and your API Credentials*
+
+For this workshop you need an Algolia account, the initial data and a front-end boilerplate. The two latter are in this repository's master branch!
 
 - Clone the repository or download [its archive](https://github.com/PLNech/workshop-algolia-zenika/archive/master.zip)
 > `git clone git@github.com:PLNech/workshop-algolia-zenika.git`
@@ -19,8 +22,12 @@ You will learn how to:
   - Your Admin API Key (for creating/modifying/deleting data)
   - Your Search-only API Key (for searching in your front-end)
 
+> In a real application you would avoid to use the Admin API Key (as it is allowed to do ANYTHING on your account) and would instead generate a specific api-key with write access, but for our workshop you can simply use the Admin API Key (**as long as you don't publish your code on internet!**)
+
 # Step 1: From JSON to Algolia
 > *Load the data and push it in an Algolia index*
+
+The first step is taking the JSON data dump, loading it in your code and pushing it to an Algolia index.
 
 - Add algolia as a dependency
 <details>
@@ -67,7 +74,7 @@ You will learn how to:
 </details>
 <details>
  <summary>Code samples</summary>
-    - Python   
+    - Python
  
         ```python
         with open("../data/articles.json") as f:
