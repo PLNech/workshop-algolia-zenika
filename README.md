@@ -531,4 +531,37 @@ var search = instantsearch({
 ```
 </details>
 
+# Step 4: Going further
+
+Congratulations for reaching this far! You just built a fully functional search interface, from the data loading in your back-end to the search display in your front-end 💪  
+Here are a few ideas of what else you could do with your Algolia application:
+
+## Promote some articles over the other results
+
+Let's update our initial data: each article will now have a `promoted` attribute, and when`true` we will display this article before the other results.
+
+- Update your articles to add a `promoted` boolean attribute to each article (and randomly set some to `true`)
+
+When you save an edited object, the engine will automatically index again your data. The update and reindexation is atomic: your front-end will search in the previous data until the new index is available, at which point it automatically targets the new data.
+
+- Update your `customRanking` setting to first use `promoted` to sort results 
+
+Once the setting is updated, promoted results will always be displayed before other ones 👌
+
+## Restrict what your users can see
+
+You may want to hide that some articles are promoted over the other ones. This can be done with the `unretrievableAttributes` setting, which lets you specify attributes that won't be returned in the search results (so they will only be used for ranking them).
+
+- Set the `unretrievableAttributes` setting to `promoted` to remove this attribute from the engine's response
+
+## Control what your teammates can access
+
+You just welcomed an intern at your company, which will be doing some development on your application. But you don't want him to mess with your production data... What can you do?
+
+- Create a new collaborator in the [Team tab](https://www.algolia.com/team)
+
+- Choose what features he has access to: by default he will only see the dashboard and search data, but for example cannot change settings or see your analytics
+
+- Click edit restrictions to limit which indices he can access: for example you can use `dev_*` to only give him rights to your `dev_foo`/`dev_bar`/... indices
+
 [is-doc]: https://community.algolia.com/instantsearch.js/documentation/#widgets)
