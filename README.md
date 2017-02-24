@@ -8,10 +8,14 @@ You will learn how to:
 - Configure the engine to search the way you like 🔎
 - Build a front-end in a few minutes with instantsearch.js ⚡
 
-We will use [**Smashing Magazine's website**](https://www.smashingmagazine.com/) as an example project, and will go from raw JSON data to a fully functional search interface:
+We will use [**Smashing Magazine's website**](https://www.smashingmagazine.com/) as an example project, and will go from raw JSON data to a fully functional search interface.
 
-- In Step 1 and Step 2, you will build the back-end. Documentation links will point you to what needs to be done, and you'll find code samples if you're stuck.
-- In Step 3, you will build the front-end from an existing webpage. We provide you the HTML/CSS/JS code so you can simply follow this readme and uncomment the code blocks to get a functional front-end app ; you are welcome to customize it further! Try tweaking the parameters and check the documentation to see what you could do :)
+## Back-end (Step 1 and 2)
+In Step 1 and Step 2, you will **build the back-end**. Documentation links will point you to what needs to be done, and you'll find code samples if you're stuck.
+
+## Front-end (Step 3)
+In Step 3, you will build the front-end from an existing webpage.  
+We provide you the HTML/CSS/JS code so you can simply follow this readme and uncomment the code blocks to get a functional front-end app. You are welcome to customize it further! Try tweaking the parameters and check [instantsearch.js' documentation](https://community.algolia.com/instantsearch.js/documentation/#widgets) to see what you could do 😉
 
 # Step 0: Get started
 > *Get the initial data and your API Credentials*
