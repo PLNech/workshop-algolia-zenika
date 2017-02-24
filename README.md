@@ -39,7 +39,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Add algolia as a dependency
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Getting started</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
   
   - [Java](https://www.algolia.com/doc/api-client/python/getting-started/#install)
@@ -73,7 +73,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Take `articles.json` and load it in your code
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Loading JSON</summary>
   - [Python](https://docs.python.org/3.6/library/json.html)
   
   - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
@@ -105,7 +105,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - With your credentials, initialize an API client
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Initialize the API Client</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
   
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#initialize-the-client)
@@ -133,12 +133,12 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Create your algolia index: `smashing`
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Initialize an index</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
   
-  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
   
-  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
+  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
 </details>
 <details>
  <summary>Code samples</summary>
@@ -161,7 +161,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Add your objects to the index
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Push data</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
   
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
@@ -200,7 +200,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
 
 - Set searchableAttributes (what can be searched) and customRanking (how results should be sorted)
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Set settings</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
   
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
@@ -235,7 +235,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
 
 - Set attributesForFaceting (which attributes can be filtered on) and confirm the new value
 <details>
- <summary>Documentation</summary>
+ <summary>Documentation | Get settings</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
   
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
@@ -250,21 +250,21 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
         res = index.set_settings({
                 "attributesForFaceting": ["tags.name"]
         })
-        index.wait_task(res['taskID'])
+        index.wait_task(res['taskID']) # as operations are asynchronous, we explicitly wait for task completion
         print("Attributes for faceting: %s." % index.get_settings()['attributesForFaceting'])
         ```
     - Java   
  
         ```java
         index.setSettings(new IndexSettings().setAttributesForFaceting(Arrays.asList("tags.name")))
-             .waitForCompletion();
+             .waitForCompletion(); // as operations are asynchronous, we explicitly wait for task completion
         System.out.println(index.getSettings().getAttributesForFaceting());
         ```
     - PHP   
  
         ```php
         $res = $index->setSettings(array("attributesForFaceting" => array("tags.name")));
-        $index->waitTask($res['taskID']);
+        $index->waitTask($res['taskID']); // as operations are asynchronous, we explicitly wait for task completion
         $settings = $index->getSettings();
         var_dump($settings['attributesForFaceting']);
 
