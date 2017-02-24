@@ -8,7 +8,10 @@ You will learn how to:
 - Configure the engine to search the way you like 🔎
 - Build a front-end in a few minutes with instantsearch.js ⚡
 
-We will use [**Smashing Magazine's website**](https://www.smashingmagazine.com/) as an example project, and will go from raw JSON data to a fully functional search interface.
+We will use [**Smashing Magazine's website**](https://www.smashingmagazine.com/) as an example project, and will go from raw JSON data to a fully functional search interface:
+
+- In Step 1 and Step 2, you will build the back-end. Documentation links will point you to what needs to be done, and you'll find code samples if you're stuck.
+- In Step 3, you will build the front-end from an existing webpage. We provide you the HTML/CSS/JS code so you can simply follow this readme and uncomment the code blocks to get a functional front-end app ; you are welcome to customize it further! Try tweaking the parameters and check the documentation to see what you could do :)
 
 # Step 0: Get started
 > *Get the initial data and your API Credentials*
@@ -182,6 +185,14 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 # Step 2: Customizing the index
 > *Set the appropriate settings for your data: where to search, how to sort, how to filter*
+
+A search engine can be configured for so many use-cases that you need to customize its default settings if you want to bring as much value as possible to your users.
+
+We'll configure two very important settings: how the engine will search in your data, and how the results will be sorted.  
+The former is controlled by `searchableAttributes`, which lists the attributes of your records that could contain search terms.  
+The latter depends on `customRanking`, which describes the attributes to use for sorting.  
+
+As an example, imagine we have `searchableAttributes=['title']` and `customRanking=['author', 'publishedDate']`: if the user searches for `javascript` and two articles match in their `title`, we would display them by alphabetical order of author name (and if they have the same author, they will be ordered by increasing publication dates).
 
 - Set searchableAttributes (what can be searched) and customRanking (how results should be sorted)
 <details>
