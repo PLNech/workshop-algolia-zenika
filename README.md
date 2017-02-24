@@ -293,7 +293,7 @@ var search = instantsearch({
 });
 ```
 </details>
-## Add your first widget: a `searchBox` for user input
+## Add your first widget: a [`searchBox`](https://community.algolia.com/instantsearch.js/documentation/#searchbox) for user input
 
 - In `index.html`, notice the `<input id="searchbar" />`: we'll use this input for our search
 - In `index.js`, uncomment the code that creates the `searchBox` widget
@@ -312,7 +312,7 @@ search.addWidget(
 ```
 </details>
 
-## Add a second widget to display search `hits`
+## Add a second widget to display search [`hits`](https://community.algolia.com/instantsearch.js/documentation/#hits)
 
 - In `index.js`, uncomment the next code block to add a `hits` widget and start the search
 
@@ -333,7 +333,7 @@ search.addWidget(
 </details>
 
 
-## Improve the search result display
+## Improve the search result display with a better template
 > *Use a HTML template for displaying the hits and some css to make it pretty*
 
 - In `index.html`, notice the `<script id="templateSearch-hit" language="x-template">` node: we will use this template to enrich the display of our search results
@@ -447,7 +447,7 @@ transformData: {
 </details>
 
 ## Display statistics/metadata about your search
-> Use the stats widget to display contextual information
+> *Use the [`stats`](https://community.algolia.com/instantsearch.js/documentation/#stats) widget to display contextual information*
 
 - In `index.html`, notice the `<div id="stats-container">"` which will host your stats
 - In `index.js`, uncomment the next code block to add a `stats` widget:
@@ -467,7 +467,7 @@ search.addWidget(
 </details>
 
 ## Add pagination to your interface
-> *Use the pagination widget to let your user navigate through pages of results*
+> *Use the [`pagination`](https://community.algolia.com/instantsearch.js/documentation/#pagination) widget to let your user navigate through pages of results*
 
 - In `index.html`, notice the `<div id="pagination-container">"` which will host the pagination
 - In `index.js`, uncomment the next code block to add a `pagination` widget:
@@ -487,7 +487,7 @@ search.addWidget(
 </details>
 
 ## Let your users filter by tag
-> *Use the refinementList widget to display an interactive tag cloud*
+> *Use the [`refinementList`](https://community.algolia.com/instantsearch.js/documentation/#refinementList) widget to display an interactive tag cloud*
 
 - In `index.html`, notice the `<div id="tags-container">"` which will host your tags
 - In `index.js`, uncomment the next code block to add a `refinementList` widget:
@@ -514,7 +514,7 @@ search.addWidget(
 </details>
 
 ## Reflect the state of the interface in the url
-> *Make it possible to share a link to search results with `urlSync`*
+> *Make it possible to share a link to search results with [`urlSync`](https://community.algolia.com/instantsearch.js/documentation/#initialization)*
 
 - In the instanciation of instantsearch.js, add the `urlSync` attribute:
 
