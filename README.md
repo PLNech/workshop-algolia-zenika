@@ -47,7 +47,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
   - [PHP](https://www.algolia.com/doc/api-client/python/getting-started/#install)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python
  
         ```python
@@ -81,7 +81,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
   - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python
  
         ```python
@@ -113,7 +113,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#initialize-the-client)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python
  
         ```python
@@ -141,7 +141,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python
 
         ```python
@@ -169,7 +169,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python
 
         ```python
@@ -208,7 +208,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
   - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python  
 
         ```python
@@ -243,7 +243,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
   - [PHP](https://www.algolia.com/doc/api-client/php/settings/#get-settings)
 </details>
 <details>
- <summary>Code samples</summary>
+ <summary>**Code samples**</summary>
     - Python
 
         ```python
