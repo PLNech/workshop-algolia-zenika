@@ -15,7 +15,7 @@ In Step 1 and Step 2, you will **build the back-end**. Documentation links will 
 
 ## Front-end (Step 3)
 In Step 3, you will build the front-end from an existing webpage.  
-We provide you the HTML/CSS/JS code so you can simply follow this readme and uncomment the code blocks to get a functional front-end app. You are welcome to customize it further! Try tweaking the parameters and check [instantsearch.js' documentation](https://community.algolia.com/instantsearch.js/documentation/#widgets) to see what you could do 😉
+We provide you the HTML/CSS/JS code so you can simply follow this readme and uncomment the code blocks to get a functional front-end app. You are welcome to customize it further! Try tweaking the parameters and check [instantsearch.js' documentation][is-doc] to see what you could do 😉
 
 # Step 0: Get started
 > *Get the initial data and your API Credentials*
@@ -278,6 +278,7 @@ For this step, you will need:
 - an editor for modifying HTML/JS files (any editor is fine).
 - a browser to display the page (either by manually opening the html or using `cd frontend; npm install && npm run serve`)
 
+**Don't hesitate to open the [instantsearch.js documentation][is-doc] : you can do a lot more with each widget than what is shown here!**
 ## Load instantsearch.js with your Algolia credentials
 
 - In `index.js`, uncomment the first code block and replace the placeholders with your credentials
@@ -528,3 +529,5 @@ var search = instantsearch({
 });
 ```
 </details>
+
+[is-doc]: https://community.algolia.com/instantsearch.js/documentation/#widgets)
