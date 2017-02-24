@@ -284,7 +284,7 @@ For this step, you will need:
 - In `index.js`, uncomment the first code block and replace the placeholders with your credentials
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
@@ -299,7 +299,7 @@ var search = instantsearch({
 - In `index.js`, uncomment the code that creates the `searchBox` widget
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.searchBox({
@@ -317,7 +317,7 @@ search.addWidget(
 - In `index.js`, uncomment the next code block to add a `hits` widget and start the search
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.hits({
@@ -340,7 +340,7 @@ search.addWidget(
 - In `index.js`, replace the item's template by `document.getElementById("templateSearch-hit").innerHTML`
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 templates: {
   item: document.getElementById("templateSearch-hit").innerHTML,
@@ -353,7 +353,7 @@ templates: {
 - In `index.js`, add to the hits widget a cssClasses property : `cssClasses: {root: 'search-hits'}`
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 //templates: {...},
 cssClasses: {
@@ -368,7 +368,7 @@ cssClasses: {
 - In `index.js`, add to the hits widget a `transformData` function to enrich your search results: use the `publishedDate` timestamp to create a human-readable `date`, and create a new `comments` attribute to pretty print the number of comments
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 //cssClasses: {...},
 transformData: {
@@ -392,7 +392,7 @@ transformData: {
 - In `index.html`, edit the template to use your new attributes (replace `commentCount` by `comments` and `publishedDate` by `date`)
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -423,7 +423,7 @@ transformData: {
 - In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}` for each searchable attribute
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -454,7 +454,7 @@ transformData: {
 - In `index.js`, uncomment the next code block to add a `stats` widget:
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.stats({
@@ -474,7 +474,7 @@ search.addWidget(
 - In `index.js`, uncomment the next code block to add a `pagination` widget:
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.pagination({
@@ -494,7 +494,7 @@ search.addWidget(
 - In `index.js`, uncomment the next code block to add a `refinementList` widget:
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.refinementList({
@@ -520,7 +520,7 @@ search.addWidget(
 - In the instanciation of instantsearch.js, add the `urlSync` attribute:
 
 <details>
- <summary>Code</summary>
+ <summary>**Code**</summary>
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
