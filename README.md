@@ -39,7 +39,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Add algolia as a dependency
 <details>
- <summary>Documentation | Getting started</summary>
+ <summary>**Documentation** | *Getting started*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
   
   - [Java](https://www.algolia.com/doc/api-client/python/getting-started/#install)
@@ -73,7 +73,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Take `articles.json` and load it in your code
 <details>
- <summary>Documentation | Loading JSON</summary>
+ <summary>**Documentation** | *Loading JSON*</summary>
   - [Python](https://docs.python.org/3.6/library/json.html)
   
   - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
@@ -105,7 +105,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - With your credentials, initialize an API client
 <details>
- <summary>Documentation | Initialize the API Client</summary>
+ <summary>**Documentation** | *Initialize the API Client*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
   
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#initialize-the-client)
@@ -133,7 +133,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Create your algolia index: `smashing`
 <details>
- <summary>Documentation | Initialize an index</summary>
+ <summary>**Documentation** | *Initialize an index*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
   
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
@@ -161,7 +161,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 
 - Add your objects to the index
 <details>
- <summary>Documentation | Push data</summary>
+ <summary>**Documentation** | *Push data*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
   
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
@@ -200,7 +200,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
 
 - Set searchableAttributes (what can be searched) and customRanking (how results should be sorted)
 <details>
- <summary>Documentation | Set settings</summary>
+ <summary>**Documentation** | *Set settings*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
   
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
@@ -235,7 +235,7 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
 
 - Set attributesForFaceting (which attributes can be filtered on) and confirm the new value
 <details>
- <summary>Documentation | Get settings</summary>
+ <summary>**Documentation** | *Get settings*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
   
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
