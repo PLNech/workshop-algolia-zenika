@@ -276,11 +276,11 @@ As an example, imagine we have `searchableAttributes=['title']` and `customRanki
 
 For this step, you will need:
 - an editor for modifying HTML/JS files (any editor is fine).
-- a browser to display the page (either by manually opening the html or using `cd frontend; npm install && npm run serve`
+- a browser to display the page (either by manually opening the html or using `cd frontend; npm install && npm run serve`)
 
 ## Load instantsearch.js with your Algolia credentials
 
-- In `assets/index.js`, uncomment the first code block and replace the placeholders with your credentials
+- In `index.js`, uncomment the first code block and replace the placeholders with your credentials
 
 ```js
 var search = instantsearch({
@@ -293,7 +293,7 @@ var search = instantsearch({
 ## Add your first widget: a `searchBox` for user input
 
 - In `index.html`, notice the `<input id="searchbar" />`: we'll use this input for our search
-- In `assets/index.js`, uncomment the code that creates the `searchBox` widget:
+- In `index.js`, uncomment the code that creates the `searchBox` widget:
 
 ```js
 search.addWidget(
@@ -308,7 +308,7 @@ search.addWidget(
 
 ## Add a second widget to display search `hits`
 
-- In `assets/index.js`, uncomment the next code block to add a `hits` widget and start the search:
+- In `index.js`, uncomment the next code block to add a `hits` widget and start the search:
 
 ```js
 search.addWidget(
@@ -328,7 +328,7 @@ search.addWidget(
 > *Use a HTML template for displaying the hits and some css to make it pretty*
 
 - In `index.html`, notice the `<script id="templateSearch-hit" language="x-template">` node: we will use this template to enrich the display of our search results
-- In `assets/index.js`, replace the item's template by this one:
+- In `index.js`, replace the item's template by this one:
 
 ```js
 templates: {
@@ -337,8 +337,8 @@ templates: {
 }
 ```
 
-- In `assets/css/index.css`, notice the `.search-hits` class: we'll use it for styling our search results
-- In `assets/index.js`, add to the hits widget a `cssClasses` property to the hits widget:
+- In `index.css`, notice the `.search-hits` class: we'll use it for styling our search results
+- In `index.js`, add to the hits widget a `cssClasses` property to the hits widget:
 
 ```js
 //templates: {...},
@@ -350,7 +350,7 @@ cssClasses: {
 ## Enrich the data before displaying it
 > *Transform your data to make it more useful for your users*
 
-- In `assets/index.js`, add to the hits widget a `transformData` function to enrich your search results:
+- In `index.js`, add to the hits widget a `transformData` function to enrich your search results:
 
 ```js
 //cssClasses: {...},
@@ -426,7 +426,7 @@ transformData: {
 > Use the stats widget to display contextual information
 
 - In `index.html`, notice the `<div id="stats-container">"` which will host your stats
-- In `assets/index.js`, uncomment the next code block to add a `stats` widget:
+- In `index.js`, uncomment the next code block to add a `stats` widget:
 
 ```js
 search.addWidget(
@@ -443,7 +443,7 @@ search.addWidget(
 > *Use the pagination widget to let your user navigate through pages of results*
 
 - In `index.html`, notice the `<div id="pagination-container">"` which will host the pagination
-- In `assets/index.js`, uncomment the next code block to add a `pagination` widget:
+- In `index.js`, uncomment the next code block to add a `pagination` widget:
 
 ```js
 search.addWidget(
@@ -460,7 +460,7 @@ search.addWidget(
 > *Use the refinementList widget to display an interactive tag cloud*
 
 - In `index.html`, notice the `<div id="tags-container">"` which will host your tags
-- In `assets/index.js`, uncomment the next code block to add a `refinementList` widget:
+- In `index.js`, uncomment the next code block to add a `refinementList` widget:
 
 ```js
 search.addWidget(
