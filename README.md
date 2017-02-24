@@ -28,7 +28,7 @@ _In a real application you would avoid to use the Admin API Key (as it is allowe
 # Step 1: From JSON to Algolia
 > *Load the data and push it in an Algolia index*
 
-The first step is taking the JSON data dump, loading it in your code and pushing it to an Algolia index.  
+The first step is taking the JSON data dump, loading it in your code and pushing it to an Algolia index.
 
 - Add algolia as a dependency
 <details>
@@ -41,7 +41,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 </details>
 <details>
  <summary>Code samples</summary>
-    - Python   
+    - Python
  
         ```python
         # requirements.txt
@@ -107,7 +107,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 </details>
 <details>
  <summary>Code samples</summary>
-    - Python   
+    - Python
  
         ```python
         client = algoliasearch.Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY")
@@ -135,7 +135,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 </details>
 <details>
  <summary>Code samples</summary>
-    - Python   
+    - Python
 
         ```python
         index = client.init_index("smashing")
@@ -163,7 +163,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 </details>
 <details>
  <summary>Code samples</summary>
-    - Python   
+    - Python
 
         ```python
         index.add_objects(articles)
@@ -229,7 +229,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
 </details>
 <details>
  <summary>Code samples</summary>
-    - Python   
+    - Python
 
         ```python
         res = index.set_settings({
