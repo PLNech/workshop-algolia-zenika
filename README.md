@@ -337,7 +337,7 @@ search.addWidget(
 > *Use a HTML template for displaying the hits and some css to make it pretty*
 
 - In `index.html`, notice the `<script id="templateSearch-hit" language="x-template">` node: we will use this template to enrich the display of our search results
-- In `index.js`, replace the item's template by this one:
+- In `index.js`, replace the item's template by `document.getElementById("templateSearch-hit").innerHTML`
 
 <details>
  <summary>Code</summary>
