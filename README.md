@@ -282,6 +282,8 @@ For this step, you will need:
 
 - In `index.js`, uncomment the first code block and replace the placeholders with your credentials
 
+<details>
+ <summary>Code</summary>
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
@@ -289,12 +291,14 @@ var search = instantsearch({
   indexName: 'smashing',
 });
 ```
-
+</details>
 ## Add your first widget: a `searchBox` for user input
 
 - In `index.html`, notice the `<input id="searchbar" />`: we'll use this input for our search
-- In `index.js`, uncomment the code that creates the `searchBox` widget:
+- In `index.js`, uncomment the code that creates the `searchBox` widget
 
+<details>
+ <summary>Code</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.searchBox({
@@ -305,11 +309,14 @@ search.addWidget(
   })
 );
 ```
+</details>
 
 ## Add a second widget to display search `hits`
 
-- In `index.js`, uncomment the next code block to add a `hits` widget and start the search:
+- In `index.js`, uncomment the next code block to add a `hits` widget and start the search
 
+<details>
+ <summary>Code</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.hits({
@@ -322,6 +329,7 @@ search.addWidget(
   })
 );
 ```
+</details>
 
 
 ## Improve the search result display
@@ -330,28 +338,36 @@ search.addWidget(
 - In `index.html`, notice the `<script id="templateSearch-hit" language="x-template">` node: we will use this template to enrich the display of our search results
 - In `index.js`, replace the item's template by this one:
 
+<details>
+ <summary>Code</summary>
 ```js
 templates: {
   item: document.getElementById("templateSearch-hit").innerHTML,
   empty: `No results`
 }
 ```
+</details>
 
 - In `index.css`, notice the `.search-hits` class: we'll use it for styling our search results
 - In `index.js`, add to the hits widget a `cssClasses` property to the hits widget:
 
+<details>
+ <summary>Code</summary>
 ```js
 //templates: {...},
 cssClasses: {
   root: 'search-hits'
 }
 ```
+</details>
 
 ## Enrich the data before displaying it
 > *Transform your data to make it more useful for your users*
 
 - In `index.js`, add to the hits widget a `transformData` function to enrich your search results:
 
+<details>
+ <summary>Code</summary>
 ```js
 //cssClasses: {...},
 transformData: {
@@ -370,9 +386,12 @@ transformData: {
   }
 }
 ```
+</details>
 
 - In `index.html`, edit the template to use your new attributes (`comments` instead of `commentCount` and `date` instead of `publishedDate`):
 
+<details>
+ <summary>Code</summary>
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -394,12 +413,15 @@ transformData: {
     </div>
 </script>
 ```
+</details>
 
 ## Help your users understand the search results with highlighting
 > *Highlight the query terms in your search results to explain them to the user*
 
 - In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}`:
 
+<details>
+ <summary>Code</summary>
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -421,6 +443,7 @@ transformData: {
     </div>
 </script>
 ```
+</details>
 
 ## Display statistics/metadata about your search
 > Use the stats widget to display contextual information
@@ -428,6 +451,8 @@ transformData: {
 - In `index.html`, notice the `<div id="stats-container">"` which will host your stats
 - In `index.js`, uncomment the next code block to add a `stats` widget:
 
+<details>
+ <summary>Code</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.stats({
@@ -438,6 +463,7 @@ search.addWidget(
   })
 );
 ```
+</details>
 
 ## Add pagination to your interface
 > *Use the pagination widget to let your user navigate through pages of results*
@@ -445,6 +471,8 @@ search.addWidget(
 - In `index.html`, notice the `<div id="pagination-container">"` which will host the pagination
 - In `index.js`, uncomment the next code block to add a `pagination` widget:
 
+<details>
+ <summary>Code</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.pagination({
@@ -455,6 +483,7 @@ search.addWidget(
   })
 );
 ```
+</details>
 
 ## Let your users filter by tag
 > *Use the refinementList widget to display an interactive tag cloud*
@@ -462,6 +491,8 @@ search.addWidget(
 - In `index.html`, notice the `<div id="tags-container">"` which will host your tags
 - In `index.js`, uncomment the next code block to add a `refinementList` widget:
 
+<details>
+ <summary>Code</summary>
 ```js
 search.addWidget(
   instantsearch.widgets.refinementList({
@@ -479,12 +510,15 @@ search.addWidget(
   })
 );
 ```
+</details>
 
 ## Reflect the state of the interface in the url
 > *Make it possible to share a link to search results with `urlSync`*
 
 - In the instanciation of instantsearch.js, add the `urlSync` attribute:
 
+<details>
+ <summary>Code</summary>
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
@@ -493,3 +527,4 @@ var search = instantsearch({
   urlSync: true
 });
 ```
+</details>
