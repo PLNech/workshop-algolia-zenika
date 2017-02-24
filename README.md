@@ -13,7 +13,7 @@ We will use [**Smashing Magazine's website**](https://www.smashingmagazine.com/)
 # Step 0: Get started
 > *Get the initial data and your API Credentials*
 
-For this workshop you need an Algolia account, the initial data and a front-end boilerplate. The two latter are in this repository's master branch!
+For this workshop you need an [Algolia account](https://www.algolia.com/users/sign_up), the initial data and a front-end boilerplate. The two latter are in this repository's master branch!
 
 - Clone the repository or download [its archive](https://github.com/PLNech/workshop-algolia-zenika/archive/master.zip)
 > `git clone git@github.com:PLNech/workshop-algolia-zenika.git`
