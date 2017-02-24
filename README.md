@@ -1,6 +1,7 @@
 # Workshop Algolia @Zenika
 
-**Welcome to the Algolia Zenika Workshop! In a few steps, you'll see how to build your search applications with Algolia. **
+**Welcome to the Algolia Zenika Workshop! In a few steps, you'll see how to build your search applications with Algolia.**  
+
 You will learn how to:
 
 - Use Algolia in your back-end to index your data 🚀
@@ -22,12 +23,12 @@ For this workshop you need an Algolia account, the initial data and a front-end 
   - Your Admin API Key (for creating/modifying/deleting data)
   - Your Search-only API Key (for searching in your front-end)
 
-> In a real application you would avoid to use the Admin API Key (as it is allowed to do ANYTHING on your account) and would instead generate a specific api-key with write access, but for our workshop you can simply use the Admin API Key (**as long as you don't publish your code on internet!**)
+_In a real application you would avoid to use the Admin API Key (as it is allowed to do **anything** on your account) and would instead generate a specific api-key with write access, but for our workshop you can simply use the Admin API Key (**as long as you don't publish your code on internet!**)_
 
 # Step 1: From JSON to Algolia
 > *Load the data and push it in an Algolia index*
 
-The first step is taking the JSON data dump, loading it in your code and pushing it to an Algolia index.
+The first step is taking the JSON data dump, loading it in your code and pushing it to an Algolia index.  
 
 - Add algolia as a dependency
 <details>
