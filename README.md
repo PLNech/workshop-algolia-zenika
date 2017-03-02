@@ -93,7 +93,7 @@ The first step is taking the JSON data dump, loading it in your code and pushing
     
         ```java
         BufferedReader br = new BufferedReader(new FileReader("../data/articles.json"));
-        List<Articles> articles = com.algolia.search.Defaults.DEFAULT_OBJECT_MAPPER.readValue(br, Articles.class);
+        List<Article> articles = com.algolia.search.Defaults.DEFAULT_OBJECT_MAPPER.readValue(br, Article.class);
         ```
     - PHP
     
