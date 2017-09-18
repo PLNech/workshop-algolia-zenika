@@ -16,7 +16,7 @@ Dans les deux premières étapes, vous allez **construire la back-end**. Des lie
 Dans la dernière étape, vous allez rajouter l'interface de recherche dans une page du site.
 Vous trouverez dans ce projet le code HTML/CSS/JS nécessaire, de sorte qu'il vous suffit de suivre ce readme et de décommenter les blocs de code pour obtenir une interface de recherche fonctionnelle. N'hésitez pas à la personnaliser davantage ! Essayez de faire varier les paramètres et jetez un œil à la [documentation d'instantsearch.js][is-doc] pour voir ce que vous pourriez faire 😉
 
-# Étape 0: Premiers pas
+# Étape 0 : Premiers pas
 > *Récupérer les données initiales et vos identifiants*
 
 Pour cet atelier vous avez besoin d'un [compte Algolia](https://www.algolia.com/users/sign_up), des données initiales et du squelette de l'interface front. Ces deux derniers se trouvent dans la branche `master` de ce projet !
@@ -36,231 +36,76 @@ _Dans une application en production, vous éviteriez d'utiliser la clé d'API Ad
 
 La première étape est de prendre le jeu de données en JSON, de le charger dans votre code et de l'envoyer dans un index Algolia.
 
-- Add Algolia as a dependency
-<details>
- <summary>**Documentation** | *Loading JSON*</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-  - [Java](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-  - [PHP](https://www.algolia.com/doc/api-client/python/getting-started/#install)
-</details>
-
-----
-----
+- Ajouter Algolia comme dépendence
+> **Documentation** | *Getting started*
+>  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
+>  - [Java](https://www.algolia.com/doc/api-client/python/getting-started/#install)
+>  - [PHP](https://www.algolia.com/doc/api-client/python/getting-started/#install)
 
 
-- Take `articles.json` and load it in your code
-<details>
- <summary>**Documentation** | *Loading JSON*</summary>
-  - [Python](https://docs.python.org/3.6/library/json.html)
-  
-  - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
-  
-  - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
-<details>
- <summary>**Code samples**</summary>
-    - Python
- 
-        ```python
-        with open("../data/articles.json") as f:
-            articles = json.load(f)
-            print(json.dumps(articles, indent=4))
-        ``` 
-    - Java
-    
-        ```java
-        BufferedReader br = new BufferedReader(new FileReader("../data/articles.json"));
-        List<Article> articles = com.algolia.search.Defaults.DEFAULT_OBJECT_MAPPER.readValue(br, Article.class);
-        ```
-    - PHP
-    
-        ```php
-        $batch = json_decode(file_get_contents('../data/articles.json'), true);
-        ```
- </details>
+- Prendre `articles.json` et le charger dans votre code
+> **Documentation** | *Loading JSON*</summary>
+> - [Python](https://docs.python.org/3.6/library/json.html)
+> - [Java](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
+> - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 
-
-- With your credentials, initialize an API client
-<details>
+- Avec vos identifiants, initialisez un client d'API
  <summary>**Documentation** | *Initialize the API Client*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
-  
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#initialize-the-client)
-  
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#initialize-the-client)
-</details>
-<details>
- <summary>**Code samples**</summary>
-    - Python
- 
-        ```python
-        client = algoliasearch.Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY")
-        ```
-    - Java   
- 
-        ```java
-        APIClient client = new ApacheAPIClientBuilder("YOUR_APP_ID", "YOUR_ADMIN_API_KEY").build();
-        ```
-    - PHP   
- 
-        ```php
-        $client = new \AlgoliaSearch\Client("YOUR_APP_ID", "YOUR_ADMIN_API_KEY");
-        ```
-</details>
 
-- Create your algolia index: `smashing`
-<details>
+- Créez votre index algolia : `smashing`
  <summary>**Documentation** | *Initialize an index*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
-  
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
-  
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
-</details>
-<details>
- <summary>**Code samples**</summary>
-    - Python
 
-        ```python
-        index = client.init_index("smashing")
-        ```
-    - Java   
- 
-        ```java
-        Index<Article> index = client.initIndex("smashing", Article.class);
-        ```
-    - PHP   
- 
-        ```php
-        $index = $client->initIndex('smashing');
-        ```
-</details>
-
-- Add your objects to the index
-<details>
+- Ajoutez vos objets à l'index
  <summary>**Documentation** | *Push data*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
-  
   - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
-  
   - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
-</details>
-<details>
- <summary>**Code samples**</summary>
-    - Python
 
-        ```python
-        index.add_objects(articles)
-        ```
-    - Java   
- 
-        ```java
-        index.addObjects(articles);
-        ```
-    - PHP   
- 
-        ```php
-        $index->addObjects($batch);
-        ```
-</details>
+# Étape 2 : Configurer l'index
+> *Configurez le moteur avec les bons réglages pour vos données : où chercher, comment trier les résultats, comment les filtrer*
 
-# Step 2: Customizing the index
-> *Set the appropriate settings for your data: where to search, how to sort, how to filter*
+Un moteur de recherche peut être configuré pour de nombreux cas d'utilisations : il faut modifier ses réglages par défaut pour offrir le plus de valeur possible à vos utilisateurs.
 
-A search engine can be configured for so many use-cases that you need to customize its default settings if you want to bring as much value as possible to your users.
+Nous allons modifier deux réglages très important : comment le moteur **cherche dans vos données**, et comment les résultats seront **triés**.
+Le premier est controllé par `searchableAttributes`, qui liste les attributs de vos objets qui pourraient contenir le terme cherché.
+Le deuxième dépend du `customRanking`, qui décrit quels attributs seront utilisés pour trier les résultats.
 
-We'll configure two very important settings: how the engine will search in your data, and how the results will be sorted.  
-The former is controlled by `searchableAttributes`, which lists the attributes of your records that could contain search terms.  
-The latter depends on `customRanking`, which describes the attributes to use for sorting.  
+Par exemple, imaginez que nous avons `searchableAttributes=['title']` and `customRanking=['author', 'publishedDate']`: si l'utilisateur cherche `javascript` et deux articles mentionnent ce terme dans leur `title`, nous les afficherons selon l'ordre alphabétique des auteurs (et si ils ont le même auteur, ils seront triés par ordre croissant des dates de publications.
 
-As an example, imagine we have `searchableAttributes=['title']` and `customRanking=['author', 'publishedDate']`: if the user searches for `javascript` and two articles match in their `title`, we would display them by alphabetical order of author name (and if they have the same author, they will be ordered by increasing publication dates).
-
-- Set searchableAttributes (what can be searched) and customRanking (how results should be sorted)
-<details>
+- Fixez les `searchableAttributes` (ce qui peut être cherché) et le `customRanking` (comment trier les résultats)
  <summary>**Documentation** | *Set settings*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
-  
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
-  
   - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
-</details>
-<details>
- <summary>**Code samples**</summary>
-    - Python  
 
-        ```python
-        index.set_settings({
-            "searchableAttributes": ["title", "description", "tags", "author"],
-            "customRanking": ["desc(commentCount)"]
-        })
-        ```
-    - Java   
- 
-        ```java
-        index.setSettings(new IndexSettings()
-                              .setSearchableAttributes(Arrays.asList("title", "description", "tags", "author"))
-                              .setCustomRanking(Arrays.asList("desc(commentCount)")));
-        ```
-    - PHP   
- 
-        ```php
-        $index->setSettings(array(
-            "searchableAttributes" => array("title", "description", "tags", "author"),
-            "customRanking" => array("desc(commentCount)")));
-        ```
-</details>
+Un autre point important d'une bonne interface de recherche est le **faceting**, une fonctionnalité permettant de répartir vos résultats selon une dimension (par exemple la distribution des téléphones par marque sur Amazon.com). Nous allons ici permettre à l'utilisateur de trier et filtrer les résultats selon les `tags` de nos articles, en utilisant l'attribut `tags.name` pour les différentier.
 
-- Set attributesForFaceting (which attributes can be filtered on) and confirm the new value
-<details>
+- Fixez les `attributesForFaceting` (quels attributs peuvent servir à répartir les résultats) pour utiliser le nom des tags :
  <summary>**Documentation** | *Get settings*</summary>
   - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
-  
   - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
-  
   - [PHP](https://www.algolia.com/doc/api-client/php/settings/#get-settings)
-</details>
-<details>
- <summary>**Code samples**</summary>
-    - Python
 
-        ```python
-        res = index.set_settings({
-                "attributesForFaceting": ["tags.name"]
-        })
-        index.wait_task(res['taskID']) # as operations are asynchronous, we explicitly wait for task completion
-        print("Attributes for faceting: %s." % index.get_settings()['attributesForFaceting'])
-        ```
-    - Java   
- 
-        ```java
-        index.setSettings(new IndexSettings().setAttributesForFaceting(Arrays.asList("tags.name")))
-             .waitForCompletion(); // as operations are asynchronous, we explicitly wait for task completion
-        System.out.println(index.getSettings().getAttributesForFaceting());
-        ```
-    - PHP   
- 
-        ```php
-        $res = $index->setSettings(array("attributesForFaceting" => array("tags.name")));
-        $index->waitTask($res['taskID']); // as operations are asynchronous, we explicitly wait for task completion
-        $settings = $index->getSettings();
-        var_dump($settings['attributesForFaceting']);
+# Étape 3 : Intégrez votre moteur de recherche dans la front-end
+> *Construire une interface de recherche rapidement avec instantsearch.js*
 
-        ```
-</details>
+Pour cette étape, il vous faut :
+- Un éditeur pour modifier des fichiers HTML/JS
+- Un navigateur pour afficher la page (manuellement ou avec `cd frontend; npm install && npm run serve`
 
-# Step 3: Integrate your search engine in a front-end 
-> *Build a search interface quickly with instantsearch.js*
+**N'hésitez pas à aller voir la [documentation d'instantsearch.js][is-doc] : chaque widget peut faire bien plus que ce que nous vous montrons ici !**
+## Initialisez instantsearch.js avec vos identifiants Algolia 
 
-For this step, you will need:
-- an editor for modifying HTML/JS files (any editor is fine)
-- a browser to display the page (either by manually opening the html or using `cd frontend; npm install && npm run serve`)
-
-**Don't hesitate to open the [instantsearch.js documentation][is-doc] : you can do a lot more with each widget than what is shown here!**
-## Load instantsearch.js with your Algolia credentials
-
-- In `index.js`, uncomment the first code block and replace the placeholders with your credentials
+- Dans `index.js`, décommentez le premier bloc de code et entrez vos identifiants
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
@@ -269,13 +114,13 @@ var search = instantsearch({
 });
 ```
 </details>
-## Add your first widget: a [`searchBox`](https://community.algolia.com/instantsearch.js/documentation/#searchbox) for user input
+## Ajoutez votre premier widget : la [`searchBox`](https://community.algolia.com/instantsearch.js/documentation/#searchbox) pour l'entrée utilisateur
 
-- In `index.html`, notice the `<input id="searchbar" />`: we'll use this input for our search
-- In `index.js`, uncomment the code that creates the `searchBox` widget
+- Dans `index.html`, notez l'élément `<input id="searchbar" />`: nous allons l'utiliser pour notre interface
+- Dans `index.js`, décommentez le code qui crée la `searchBox`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 search.addWidget(
   instantsearch.widgets.searchBox({
@@ -288,12 +133,12 @@ search.addWidget(
 ```
 </details>
 
-## Add a second widget to display search [`hits`](https://community.algolia.com/instantsearch.js/documentation/#hits)
+## Ajoutez un deuxième widget pour afficher les résultats : les [`hits`](https://community.algolia.com/instantsearch.js/documentation/#hits)
 
-- In `index.js`, uncomment the next code block to add a `hits` widget and start the search
+- Dans `index.js`, décommentez le bloc suivant pour ajouter les `hits` et démarrer la recherche (ce qui va connecter les widgets et afficher les résultats pour une recherche vide)
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 search.addWidget(
   instantsearch.widgets.hits({
@@ -309,14 +154,14 @@ search.addWidget(
 </details>
 
 
-## Improve the search result display with a better template
-> *Use a HTML template for displaying the hits and some css to make it pretty*
+## Améliorez l'affichage des résultats avec un meilleur template
+> *Utiliser un template HTML pour afficher les résultats et un peu de CSS pour les rendre attrayants*
 
-- In `index.html`, notice the `<script id="templateSearch-hit" language="x-template">` node: we will use this template to enrich the display of our search results
-- In `index.js`, replace the item's template by `document.getElementById("templateSearch-hit").innerHTML`
+- Dans `index.html`, notez l'élément `<script id="templateSearch-hit" language="x-template">` : nous allons l'utiliser pour enrichir l'affichage de nos résultats
+- Dans `index.js`, replacez le template `item` par `document.getElementById("templateSearch-hit").innerHTML`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 templates: {
   item: document.getElementById("templateSearch-hit").innerHTML,
@@ -325,11 +170,11 @@ templates: {
 ```
 </details>
 
-- In `index.css`, notice the `.search-hits` class: we'll use it for styling our search results
-- In `index.js`, add to the hits widget a cssClasses property : `cssClasses: {root: 'search-hits'}`
+- Dans `index.css`, notez la classe `.search-hits` : nous allons nous en servir pour donner du style à nos résultats
+- Dans `index.js`, ajoutez aux `hits` une propriété `cssClasses`: `cssClasses: {root: 'search-hits'}`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 //templates: {...},
 cssClasses: {
@@ -338,21 +183,21 @@ cssClasses: {
 ```
 </details>
 
-## Enrich the data before displaying it
-> *Transform your data to make it more useful for your users*
+## Enrichissez vos données avant de les afficher 
+> *Transformer la donnée pour qu'elle serve davantage à l'utilisateur*
 
-- In `index.js`, add to the hits widget a `transformData` function to enrich your search results: use the `publishedDate` timestamp to create a human-readable `date`, and create a new `comments` attribute to pretty print the number of comments
+- Dans `index.js`, ajoutez aux `hits` une fonction `transformData` qui va enrichir vos résultats: utilisez la timestamp `publishedDate` pour créer une `date` lisible par un humain, et créez des `comments` pour afficher proprement le nombre de commentaires
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 //cssClasses: {...},
 transformData: {
   item: (hit) => {
-    // Date in human-readable format
+    // Date dans un format lisible
     hit.date = moment.unix(hit.publishedDate).format('MMMM Do, YYYY');
 
-    // Number of comments
+    // Nombre de commentaires
     if (hit.commentCount > 1) {
       hit.comments = `${hit.commentCount} Comments`;
     } else {
@@ -365,10 +210,10 @@ transformData: {
 ```
 </details>
 
-- In `index.html`, edit the template to use your new attributes (replace `commentCount` by `comments` and `publishedDate` by `date`)
+- Dans `index.html`, éditez le template pour utiliser vos nouveaux attributs (remplacez `commentCount` par `comments` et `publishedDate` par `date`)
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -392,14 +237,14 @@ transformData: {
 ```
 </details>
 
-## Help your users understand the search results with highlighting
-> *Highlight the query terms in your search results to explain them to the user*
+## Aidez vos utilisateurs à comprendre les résultats avec le Highlighting (mise en valeur)
+> *Mettre en valeur les termes de la recherche dans vos résultats pour les expliquer à l'utilisateur*
 
-[Search result highlighting](https://blog.algolia.com/inside-the-algolia-engine-part-5-highlighting-a-cornerstone-to-search-ux/) is one of the key components of a great search experience. Your search results already include highlighted attributes, you just need to use them in your results template!  
-- In `index.html`, edit the template to highlight the `searchableAttributes` in the results: simply replace `{{attribute}}` by `{{{_highlightResult.attribute.value}}}` for each searchable attribute
+[La mise en valeur des résultats de recherche](https://blog.algolia.com/inside-the-algolia-engine-part-5-highlighting-a-cornerstone-to-search-ux/) est l'un des composants clés d'une bonne expérience de recherche. La réponse d'Algolia contient déjà ces *highlights*, il ne reste plus qu'à les afficher !
+- Dans `index.html`, modifiez le template pour surligner les `searchableAttributes` dans les résultats: il suffit de remplacer `{{attribut}}` by `{{{_highlightResult.attribut.value}}}` pour chaque attribut cherchable
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -414,6 +259,7 @@ transformData: {
           <li class="search-hit--info search-hit--info__tags tags">
           {{#tags}}<a href="https://www.smashingmagazine.com/tag/{{slug}}/">{{{name}}}</a>{{/tags}}
           </li>
+widget to display contextual information*
           <li class="search-hit--info search-hit--info__comments comments">{{comments}}</li>
         </ul>
         <p class="search-hit--excerpt">{{{_highlightResult.description.value}}}</p>
@@ -422,15 +268,14 @@ transformData: {
 </script>
 ```
 </details>
+## Affichez des statistiques/métadonnées de la recherche
+> *Montrer des informations contextuelles avec le widget [`stats`](https://community.algolia.com/instantsearch.js/documentation/#stats)*
 
-## Display statistics/metadata about your search
-> *Use the [`stats`](https://community.algolia.com/instantsearch.js/documentation/#stats) widget to display contextual information*
-
-- In `index.html`, notice the `<div id="stats-container">"` which will host your stats
-- In `index.js`, uncomment the next code block to add a `stats` widget:
+- Dans `index.html`, notez l'élément `<div id="stats-container">"` qui va accueillir vos statistiques
+- Dans `index.js`, décommentez le bloc suivant pour ajouter le widget `stats`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 search.addWidget(
   instantsearch.widgets.stats({
@@ -443,34 +288,34 @@ search.addWidget(
 ```
 </details>
 
-## Add pagination to your interface
-> *Use the [`pagination`](https://community.algolia.com/instantsearch.js/documentation/#pagination) widget to let your user navigate through pages of results*
+## Ajoutez de la pagination à votre interface
+> *Utiliser le widget [`pagination`](https://community.algolia.com/instantsearch.js/documentation/#pagination) pour passer d'une page à l'autre*
 
-- In `index.html`, notice the `<div id="pagination-container">"` which will host the pagination
-- In `index.js`, uncomment the next code block to add a `pagination` widget:
+- Dans `index.html`, notez l'élément `<div id="pagination-container">"` qui contiendra la pagination
+- Dans `index.js`, décommentez le bloc suivant pour ajouter le widget `pagination`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 search.addWidget(
   instantsearch.widgets.pagination({
     container: '#pagination-container',
     maxPages: 20,
-    // default is to scroll to 'body', here we disable this behavior
+    // par défaut le widget défile jusqu'au 'body', désactivons cette fonctionnalité
     scrollTo: false
   })
 );
 ```
 </details>
 
-## Let your users filter by tag
-> *Use the [`refinementList`](https://community.algolia.com/instantsearch.js/documentation/#refinementList) widget to display an interactive tag cloud*
+## Permettre aux utilisateurs de filtrer par tag
+> *Utiliser le widget [`refinementList`](https://community.algolia.com/instantsearch.js/documentation/#refinementList) pour afficher un nuage de tags interactif*
 
-- In `index.html`, notice the `<div id="tags-container">"` which will host your tags
-- In `index.js`, uncomment the next code block to add a `refinementList` widget:
+- Dans `index.html`, notez l'élément `<div id="tags-container">"` qui va contenir les tags
+- Dans `index.js`, décommentez le bloc suivant pour ajouter le widget `refinementList`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 search.addWidget(
   instantsearch.widgets.refinementList({
@@ -490,13 +335,13 @@ search.addWidget(
 ```
 </details>
 
-## Reflect the state of the interface in the url
-> *Make it possible to share a link to search results with [`urlSync`](https://community.algolia.com/instantsearch.js/documentation/#initialization)*
+## Reflétez l'état de la recherche dans l'URL
+> *Permettre de partager un lien vers des résultats de recherche avec [`urlSync`](https://community.algolia.com/instantsearch.js/documentation/#initialization)*
 
-- In the instanciation of instantsearch.js, add the `urlSync` attribute:
+- Dans l'initialisation d'instantsearch, activez l'`urlSync`
 
 <details>
- <summary>**Code**</summary>
+ <summary><b>Code</b></summary>
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
@@ -507,37 +352,29 @@ var search = instantsearch({
 ```
 </details>
 
-# Step 4: Going further
+# Étape 4 : Aller plus loin
 
-Congratulations for reaching this far! You just built a fully functional search interface, from the data loading in your back-end to the search display in your front-end 💪  
-Here are a few ideas of what else you could do with your Algolia application:
+Félicitations pour être arrivé aussi loin ! Vous venez de construire une interface de recherche complètement fonctionnelle, du chargement des données depuis votre back-end à l'affichage de la recherche dans votre front-end 💪
 
-## Promote some articles over the other results
+Voilà quelques idées pour aller plus loin avec votre application Algolia :
 
-Let's update our initial data: each article will now have a `promoted` attribute, and when`true` we will display this article before the other results.
+## Promouvoir certains articles avant les autres résultats
 
-- Update your articles to add a `promoted` boolean attribute to each article (and randomly set some to `true`)
+Mettons à jour nos données initiales : chaque article aura maintenant un attribut `promoted`, qui quand il vaut `true` nous afficherons cet article avant les autres résultats.
 
-When you save an edited object, the engine will automatically index again your data. The update and reindexation is atomic: your front-end will search in the previous data until the new index is available, at which point it automatically targets the new data.
+- Mettez à jour vos articles pour ajouter un attribut `promoted` à chaque article (en le mettant vrai ou faux aléatoirement)
+[**Documentation** : *browse*](https://www.algolia.com/doc/api-reference/api-methods/browse/)
 
-- Update your `customRanking` setting to first use `promoted` to sort results 
+Quand vous mettez à jour un objet, le moteur va automatiquement réindexer vos données. La mise à jour et réindexation est atomique : votre front-end va chercher dans les données précédentes puis basculera sur le nouvel i ndex sans interruption de service.
 
-Once the setting is updated, promoted results will always be displayed before other ones 👌
+- Modifiez votre `customRanking` pour utiliser d'abord `promoted` dans le tri des résultats.
 
-## Restrict what your users can see
+Une fois ce réglage mis à jour, les articles promus seront toujours affichés avant les autres 👌
 
-You may want to hide that some articles are promoted over the other ones. This can be done with the `unretrievableAttributes` setting, which lets you specify attributes that won't be returned in the search results (so they will only be used for ranking them).
+## Restraindre ce que vos utilisateurs peuvent voir 
 
-- Set the `unretrievableAttributes` setting to `promoted` to remove this attribute from the engine's response
+Vous pourriez vouloir cacher aux utilisateurs que certains articles sont promus par rapport aux autres. Vous pouvez le faire en configurant les `unretrievableAttributes`, qui décrivent quels attributs ne seront pas renvoyés dans les résultats de recherche (et ne serviront donc qu'à les trier).
 
-## Control what your teammates can access
-
-You just welcomed an intern at your company, which will be doing some development on your application. But you don't want him to mess with your production data... What can you do?
-
-- Create a new collaborator in the [Team tab](https://www.algolia.com/team)
-
-- Choose what features he has access to: by default he will only see the dashboard and search data, but for example cannot change settings or see your analytics
-
-- Click edit restrictions to limit which indices he can access: for example you can use `dev_*` to only give him rights to your `dev_foo`/`dev_bar`/... indices
+- Réglez les `unretrievableAttributes` sur `promoted` pour enlever cet attribut de la réponse du moteur
 
 [is-doc]: https://community.algolia.com/instantsearch.js/documentation/#widgets)
