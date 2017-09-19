@@ -47,7 +47,7 @@ print(json.dumps(articles, indent=4))
 
 ```java
 BufferedReader br = new BufferedReader(new FileReader("../data/articles.json"));
-List<Article> articles = com.algolia.search.Defaults.DEFAULT_OBJECT_MAPPER.readValue(br, Article.class);
+articles = com.algolia.search.Defaults.DEFAULT_OBJECT_MAPPER.readValue(br, new TypeReference<List<Article>>(){});
 ```
 
 </details>
