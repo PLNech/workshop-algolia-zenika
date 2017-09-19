@@ -12,7 +12,7 @@ Nous utiliserons [**Smashing Magazine**](https://www.smashingmagazine.com/) comm
 ## Back-end (Étapes 1 et 2)
 Dans les deux premières étapes, vous allez **construire la back-end**. Des liens vous guiderons vers la documentation appropriée, et des exemples de code sont à votre disposition dans `solution.md` si une tache vous bloque.
 
-## Front-end (Étape 3)README.md
+## Front-end (Étape 3)
 Dans la dernière étape, vous allez rajouter l'interface de recherche dans une page du site.
 Vous trouverez dans ce projet le code HTML/CSS/JS nécessaire, de sorte qu'il vous suffit de suivre ce readme et de décommenter les blocs de code pour obtenir une interface de recherche fonctionnelle. N'hésitez pas à la personnaliser davantage ! Essayez de faire varier les paramètres et jetez un œil à la [documentation d'instantsearch.js][is-doc] pour voir ce que vous pourriez faire 😉
 
@@ -377,4 +377,4 @@ Vous pourriez vouloir cacher aux utilisateurs que certains articles sont promus 
 
 - Réglez les `unretrievableAttributes` sur `promoted` pour enlever cet attribut de la réponse du moteur
 
-[is-doc]: https://community.algolia.com/instantsearch.js/documentation/#widgets)
+[is-doc]: https://community.algolia.com/instantsearch.js/documentation/#widgets
