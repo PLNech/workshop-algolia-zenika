@@ -10,9 +10,9 @@ Vous apprendrez comment :
 Nous utiliserons [**Smashing Magazine**](https://www.smashingmagazine.com/) comme projet, en allant d'un simple fichier JSON à l'interface de recherche fonctionnelle.
 
 ## Back-end (Étapes 1 et 2)
-Dans les deux premières étapes, vous allez **construire la back-end**. Des liens vous guiderons vers la documentation appropriée, et des exemples de code sont à votre disposition si une tache vous bloque.
+Dans les deux premières étapes, vous allez **construire la back-end**. Des liens vous guiderons vers la documentation appropriée, et des exemples de code sont à votre disposition dans `solution.md` si une tache vous bloque.
 
-## Front-end (Étape 3)
+## Front-end (Étape 3)README.md
 Dans la dernière étape, vous allez rajouter l'interface de recherche dans une page du site.
 Vous trouverez dans ce projet le code HTML/CSS/JS nécessaire, de sorte qu'il vous suffit de suivre ce readme et de décommenter les blocs de code pour obtenir une interface de recherche fonctionnelle. N'hésitez pas à la personnaliser davantage ! Essayez de faire varier les paramètres et jetez un œil à la [documentation d'instantsearch.js][is-doc] pour voir ce que vous pourriez faire 😉
 
@@ -78,7 +78,7 @@ Le deuxième dépend du `customRanking`, qui décrit quels attributs seront util
 
 Par exemple, imaginez que nous avons `searchableAttributes=['title']` and `customRanking=['author', 'publishedDate']`: si l'utilisateur cherche `javascript` et deux articles mentionnent ce terme dans leur `title`, nous les afficherons selon l'ordre alphabétique des auteurs (et si ils ont le même auteur, ils seront triés par ordre croissant des dates de publications.
 
-- Fixez les `searchableAttributes` (ce qui peut être cherché) et le `customRanking` (comment trier les résultats)
+- Réglez les `searchableAttributes` (ce qui peut être cherché) et le `customRanking` (comment trier les résultats)
 > **Documentation** | *Set settings*
 >  - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
 >  - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
@@ -86,7 +86,7 @@ Par exemple, imaginez que nous avons `searchableAttributes=['title']` and `custo
 
 Un autre point important d'une bonne interface de recherche est le **faceting**, une fonctionnalité permettant de répartir vos résultats selon une dimension (par exemple la distribution des téléphones par marque sur Amazon.com). Nous allons ici permettre à l'utilisateur de trier et filtrer les résultats selon les `tags` de nos articles, en utilisant l'attribut `tags.name` pour les différentier.
 
-- Fixez les `attributesForFaceting` (quels attributs peuvent servir à répartir les résultats) pour utiliser le nom des tags :
+- Réglez les `attributesForFaceting` (quels attributs peuvent servir à répartir les résultats) pour utiliser le nom des tags :
 > **Documentation** | *Get settings*
 >  - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
 >  - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
