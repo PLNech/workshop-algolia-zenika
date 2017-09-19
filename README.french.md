@@ -371,7 +371,7 @@ Quand vous mettez à jour un objet, le moteur va automatiquement réindexer vos 
 
 Une fois ce réglage mis à jour, les articles promus seront toujours affichés avant les autres 👌
 
-## Restraindre ce que vos utilisateurs peuvent voir 
+## Restreindre ce que vos utilisateurs peuvent voir 
 
 Vous pourriez vouloir cacher aux utilisateurs que certains articles sont promus par rapport aux autres. Vous pouvez le faire en configurant les `unretrievableAttributes`, qui décrivent quels attributs ne seront pas renvoyés dans les résultats de recherche (et ne serviront donc qu'à les trier).
 
