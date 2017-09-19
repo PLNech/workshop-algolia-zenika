@@ -8,7 +8,7 @@ $batch = json_decode(file_get_contents('../data/articles.json'), true);
 var_dump($batch);
 
 // Initialize API Client
-$client = new \AlgoliaSearch\Client('***REMOVED***', '***REMOVED***');
+$client = new \AlgoliaSearch\Client('YOUR_APP_ID', 'YOUR_ADMIN_API_KEY');
 
 // Initialize index
 $index = $client->initIndex('smashing');
