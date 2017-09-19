@@ -10,7 +10,7 @@ Vous apprendrez comment :
 Nous utiliserons [**Smashing Magazine**](https://www.smashingmagazine.com/) comme projet, en allant d'un simple fichier JSON à l'interface de recherche fonctionnelle.
 
 ## Back-end (Étapes 1 et 2)
-Dans les deux premières étapes, vous allez **construire la back-end**. Des liens vous guiderons vers la documentation appropriée, et des exemples de code sont à votre disposition dans `solution.md` si une tache vous bloque.
+Dans les deux premières étapes, vous allez **construire la back-end**. Des liens vous guiderons vers la documentation appropriée, et des exemples de code sont à votre disposition dans [`solution.md`](solution.md) si une tache vous bloque.
 
 ## Front-end (Étape 3)
 Dans la dernière étape, vous allez rajouter l'interface de recherche dans une page du site.
