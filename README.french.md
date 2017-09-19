@@ -106,6 +106,7 @@ Pour cette étape, il vous faut :
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
@@ -121,6 +122,7 @@ var search = instantsearch({
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 search.addWidget(
   instantsearch.widgets.searchBox({
@@ -139,6 +141,7 @@ search.addWidget(
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 search.addWidget(
   instantsearch.widgets.hits({
@@ -162,6 +165,7 @@ search.addWidget(
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 templates: {
   item: document.getElementById("templateSearch-hit").innerHTML,
@@ -175,6 +179,7 @@ templates: {
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 //templates: {...},
 cssClasses: {
@@ -190,6 +195,7 @@ cssClasses: {
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 //cssClasses: {...},
 transformData: {
@@ -214,6 +220,7 @@ transformData: {
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -245,6 +252,7 @@ transformData: {
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```html
 <script id="templateSearch-hit" language="x-template">
     <div class="search-hit">
@@ -276,6 +284,7 @@ widget to display contextual information*
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 search.addWidget(
   instantsearch.widgets.stats({
@@ -296,6 +305,7 @@ search.addWidget(
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 search.addWidget(
   instantsearch.widgets.pagination({
@@ -316,6 +326,7 @@ search.addWidget(
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 search.addWidget(
   instantsearch.widgets.refinementList({
@@ -342,6 +353,7 @@ search.addWidget(
 
 <details>
  <summary><b>Code</b></summary>
+ 
 ```js
 var search = instantsearch({
   appId: 'YOUR_APP_ID',
