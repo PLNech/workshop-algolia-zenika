@@ -50,22 +50,22 @@ La première étape est de prendre le jeu de données en JSON, de le charger dan
 > - [PHP](https://secure.php.net/manual/en/function.json-decode.php)
 
 - Avec vos identifiants, initialisez un client d'API
- <summary>**Documentation** | *Initialize the API Client*</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
-  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#initialize-the-client)
-  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#initialize-the-client)
+> **Documentation** | *Initialize the API Client*
+>  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#initialize-the-client)
+>  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#initialize-the-client)
+>  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#initialize-the-client)
 
 - Créez votre index algolia : `smashing`
- <summary>**Documentation** | *Initialize an index*</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
-  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
-  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
+> **Documentation** | *Initialize an index*
+>  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
+>  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
+>  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
 
 - Ajoutez vos objets à l'index
- <summary>**Documentation** | *Push data*</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
-  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
-  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
+> **Documentation** | *Push data*
+>  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#push-data)
+>  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#push-data)
+>  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#push-data)
 
 # Étape 2 : Configurer l'index
 > *Configurez le moteur avec les bons réglages pour vos données : où chercher, comment trier les résultats, comment les filtrer*
@@ -79,18 +79,18 @@ Le deuxième dépend du `customRanking`, qui décrit quels attributs seront util
 Par exemple, imaginez que nous avons `searchableAttributes=['title']` and `customRanking=['author', 'publishedDate']`: si l'utilisateur cherche `javascript` et deux articles mentionnent ce terme dans leur `title`, nous les afficherons selon l'ordre alphabétique des auteurs (et si ils ont le même auteur, ils seront triés par ordre croissant des dates de publications.
 
 - Fixez les `searchableAttributes` (ce qui peut être cherché) et le `customRanking` (comment trier les résultats)
- <summary>**Documentation** | *Set settings*</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
-  - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
-  - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
+> **Documentation** | *Set settings*
+>  - [Python](https://www.algolia.com/doc/api-client/python/settings/#set-settings)
+>  - [Java](https://www.algolia.com/doc/api-client/java/settings/#set-settings)
+>  - [PHP](https://www.algolia.com/doc/api-client/php/settings/#set-settings)
 
 Un autre point important d'une bonne interface de recherche est le **faceting**, une fonctionnalité permettant de répartir vos résultats selon une dimension (par exemple la distribution des téléphones par marque sur Amazon.com). Nous allons ici permettre à l'utilisateur de trier et filtrer les résultats selon les `tags` de nos articles, en utilisant l'attribut `tags.name` pour les différentier.
 
 - Fixez les `attributesForFaceting` (quels attributs peuvent servir à répartir les résultats) pour utiliser le nom des tags :
- <summary>**Documentation** | *Get settings*</summary>
-  - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
-  - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
-  - [PHP](https://www.algolia.com/doc/api-client/php/settings/#get-settings)
+> **Documentation** | *Get settings*
+>  - [Python](https://www.algolia.com/doc/api-client/python/settings/#get-settings)
+>  - [Java](https://www.algolia.com/doc/api-client/java/settings/#get-settings)
+>  - [PHP](https://www.algolia.com/doc/api-client/php/settings/#get-settings)
 
 # Étape 3 : Intégrez votre moteur de recherche dans la front-end
 > *Construire une interface de recherche rapidement avec instantsearch.js*
