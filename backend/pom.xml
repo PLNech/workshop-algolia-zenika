@@ -10,18 +10,10 @@
     <build>
         <plugins>
             <plugin>
-                <!-- Build an executable JAR -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>fr.plnech.workshops.zenika.Main</mainClass>
-                        </manifest>
-                    </archive>
+                    <mainClass>fr.plnech.workshops.zenika.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
