@@ -115,6 +115,7 @@ var search = instantsearch({
 });
 ```
 </details>
+
 ## Ajoutez votre premier widget : la [`searchBox`](https://community.algolia.com/instantsearch.js/documentation/#searchbox) pour l'entrée utilisateur
 
 - Dans `index.html`, notez l'élément `<input id="searchbar" />`: nous allons l'utiliser pour notre interface
@@ -276,6 +277,7 @@ widget to display contextual information*
 </script>
 ```
 </details>
+
 ## Affichez des statistiques/métadonnées de la recherche
 > *Montrer des informations contextuelles avec le widget [`stats`](https://community.algolia.com/instantsearch.js/documentation/#stats)*
 
