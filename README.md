@@ -39,8 +39,8 @@ La première étape est de prendre le jeu de données en JSON, de le charger dan
 - Ajouter Algolia comme dépendence
 > **Documentation** | *Getting started*
 >  - [Python](https://www.algolia.com/doc/api-client/python/getting-started/#install)
->  - [Java](https://www.algolia.com/doc/api-client/python/getting-started/#install)
->  - [PHP](https://www.algolia.com/doc/api-client/python/getting-started/#install)
+>  - [Java](https://www.algolia.com/doc/api-client/java/getting-started/#install)
+>  - [PHP](https://www.algolia.com/doc/api-client/php/getting-started/#install)
 
 
 - Prendre `articles.json` et le charger dans votre code
